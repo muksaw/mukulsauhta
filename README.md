@@ -7,12 +7,8 @@
 
 ## Work Experience
 **Data Engineer Intern @ Perdis AI LLC (_June 2024 - August 2024_)**
-- Enhanced data monitoring capabilities using PySpark, Delta Lake, and SQL to handle large datasets incrementally
-- Implemented SCD Type 2 to track historical changes in dimensional data
 
 **Full-Stack Developer @ Beesbridge LLC (_December 2022 - Present_)**
-- Developed and maintained the company's website using WordPress, JavaScript, HTML, and CSS
-- Improved backend infrastructure for cloud computing projects
 
 ## Projects
 ### Multi-Platform Streaming Monitor
@@ -24,6 +20,26 @@ Contributed to unit testing and frontend layout improvements for a coffee recipe
 ### CUDA-Accelerated Vector Calculation
 Implemented a CUDA algorithm in **C** for parallel processing to optimize performance in vector magnitude calculations.
 
+### Beesbridge LLC Website
+Created and maintained a website for a boutique data engineering company using WordPress.
+Integrated custom HTML and CSS to extend WordPress functionality, ensuring the site’s standout design.
+
+### Data Observability Tool for Profile and Drift Metrics
+Developed an open-source tool with PySpark to enhance data monitoring by implementing profile and drift metrics that aggregate, reformat, and analyze large incoming datasets incrementally.
+Generated detailed visualizations and dashboards of big data through profiling metrics such as quantile distributions, frequent items, and numerous statistical calculations, which detect data drifts.
+
+### Data Engineering: Slowly Changing Dimension (SCD) Type 2
+Implemented SCD Type 2 to track historical changes in dimensional data, ensuring full visibility of past data states for reliable analysis.
+Utilized Delta Lake, PySpark, and SQL to efficiently manage records by merging new data with existing datasets and tracking changes using dynamic updates and versioning.
+
+### TrailManager
+Created a “Trail Manager” tool using Java to analyze and optimize paths between nodes representing campsites or checkpoints in a wilderness setting.
+Applied breadth-first search (BFS) algorithms to find the most efficient routes, reducing travel time and resource consumption.
+
+### AES Encryption and Decryption (C, Makefile)
+Implemented an encryption and decryption tool using the Advanced Encryption Standard (AES), ensuring secure data transmission and storage.
+Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.
+
 ## Skills
 - **Programming:** Java, Python, C++, SQL, PySpark
 - **Web Development:** HTML, CSS, JavaScript, WordPress
@@ -31,4 +47,4 @@ Implemented a CUDA algorithm in **C** for parallel processing to optimize perfor
 
 ## Contact
 - [GitHub](https://github.com/muksaw)
-- [LinkedIn](https://www.linkedin.com/in/mukul-sauhta)
+- [LinkedIn](https://www.linkedin.com/in/mukul-sauhta-4b4276234/)
