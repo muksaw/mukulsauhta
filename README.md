@@ -2,7 +2,7 @@
 ---
 
 #### Hello! I'm Mukul, a driven fourth-year [Computer Science](https://www.csc.ncsu.edu/) student at [North Carolina State University](https://www.ncsu.edu/), specializing in software engineering, data engineering, and full-stack development. <br>   <br>  I love building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise. <br>   <br>    Recently, I worked as a Data Engineer Intern at Perdis AI LLC, where I enhanced data monitoring capabilities through cutting-edge tools like [PySpark](https://spark.apache.org/docs/latest/api/python/) and [Delta Lake](https://docs.databricks.com/delta/index.html).  <br>    <br>   I am also deeply involved in web development and backend infrastructure, having contributed to the creation and maintenance of multiple [high-performing websites](https://beesbridge.us/), but I hope to only improve my skills in these fields. <br>   <br>   Beyond my technical pursuits, I enjoy swimming, reading, and heavy weightlifting.
----
+
 
 ## Education
 ---
@@ -59,8 +59,8 @@
 ## Certifications
 ---
 - [Machine Learning Associate](https://databricks.com/learn/certification/machine-learning-associate)
-- [Generative AI Associate](https://databricks.com/learn/certification/generative-ai-associate)
-- [Data Engineering Associate](https://databricks.com/learn/certification/data-engineering-associate)
+- [Generative AI Associate](https://www.databricks.com/resources/learn/training/generative-ai-fundamentals?scid=7018Y000001Fi0MQAS&utm_medium=paid+search&utm_source=google&utm_campaign=20398881968&utm_adgroup=146898983890&utm_content=training&utm_offer=generative-ai-fundamentals&utm_ad=667123197773&utm_term=databricks%20generative%20ai%20certification&gad_source=1&gclid=Cj0KCQjwo8S3BhDeARIsAFRmkOMa4SLMs4ZkBLVR0asaE-czIOZm3NeOpnwk6R3TOWym5o_pQyyjlNcaAoujEALw_wcB)
+- [Data Engineering Associate](https://www.databricks.com/learn/certification/data-engineer-associate)
 
 
 ## Contact
