@@ -3,7 +3,7 @@
 #### Hello! I'm Mukul, a driven fourth-year Computer Science student at North Carolina State University, specializing in software engineering, data engineering, and full-stack development. My passion lies in building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise. Recently, I worked as a Data Engineer Intern at Perdis AI LLC, where I enhanced data monitoring capabilities through cutting-edge tools like PySpark and Delta Lake. I am also deeply involved in web development and backend infrastructure, having contributed to the creation and maintenance of multiple high-performing websites. Outside of my technical pursuits, I am committed to continuous learning and love to explore new technologies and frameworks that shape the future of computing.
 
 ## Education
-- B.S., Computer Science  North Carolina State University (_Expected May 2025_)
+- B.S., Computer Science NCSU (_Expected May 2025_)
 
 ## Work Experience
 **Data Engineer Intern @ Perdis AI LLC (_June 2024 - August 2024_)**
