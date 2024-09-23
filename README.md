@@ -5,59 +5,65 @@
 ---
 
 ## Education
-- B.S., Computer Science NCSU (_Expected May 2025_)
 ---
+- B.S., Computer Science NCSU (_Expected May 2025_)
+
 
 ## Work Experience
+---
 **Data Engineer Intern @ Perdis AI LLC (_June 2024 - August 2024_)**
 
 **Full-Stack Developer @ Beesbridge LLC (_December 2022 - Present_)**
----
+
 
 ## Projects
+---
 ### Multi-Platform Streaming Monitor
-Developed a Chrome extension using **JavaScript**, **Twitch API**, and **YouTube API** to monitor the live status of 100 streamers.
+- Developed a Chrome extension using **JavaScript**, **Twitch API**, and **YouTube API** to monitor the live status of 100 streamers.
 
 ### CoffeeMaker Simulation
-Contributed to unit testing and frontend layout improvements for a coffee recipe management system using **Java**, **Maven**, and **JUnit**.
+- Contributed to unit testing and frontend layout improvements for a coffee recipe management system using **Java**, **Maven**, and **JUnit**.
 
 ### CUDA-Accelerated Vector Calculation
-Implemented a CUDA algorithm in **C** for parallel processing to optimize performance in vector magnitude calculations.
+- Implemented a CUDA algorithm in **C** for parallel processing to optimize performance in vector magnitude calculations.
 
 ### Beesbridge LLC Website
-Created and maintained a website for a boutique data engineering company using WordPress.
-Integrated custom HTML and CSS to extend WordPress functionality, ensuring the site’s standout design.
+- Created and maintained a website for a boutique data engineering company using WordPress.
+- Integrated custom HTML and CSS to extend WordPress functionality, ensuring the site’s standout design.
 
 ### Data Observability Tool for Profile and Drift Metrics
-Developed an open-source tool with PySpark to enhance data monitoring by implementing profile and drift metrics that aggregate, reformat, and analyze large incoming datasets incrementally.
-Generated detailed visualizations and dashboards of big data through profiling metrics such as quantile distributions, frequent items, and numerous statistical calculations, which detect data drifts.
+- Developed an open-source tool with PySpark to enhance data monitoring by implementing profile and drift metrics that aggregate, reformat, and analyze large incoming datasets incrementally.
+- Generated detailed visualizations and dashboards of big data through profiling metrics such as quantile distributions, frequent items, and numerous statistical calculations, which detect data drifts.
 
 ### Data Engineering: Slowly Changing Dimension (SCD) Type 2
-Implemented SCD Type 2 to track historical changes in dimensional data, ensuring full visibility of past data states for reliable analysis.
-Utilized Delta Lake, PySpark, and SQL to efficiently manage records by merging new data with existing datasets and tracking changes using dynamic updates and versioning.
+- Implemented SCD Type 2 to track historical changes in dimensional data, ensuring full visibility of past data states for reliable analysis.
+- Utilized Delta Lake, PySpark, and SQL to efficiently manage records by merging new data with existing datasets and tracking changes using dynamic updates and versioning.
 
 ### TrailManager
-Created a “Trail Manager” tool using Java to analyze and optimize paths between nodes representing campsites or checkpoints in a wilderness setting.
-Applied breadth-first search (BFS) algorithms to find the most efficient routes, reducing travel time and resource consumption.
+- Created a “Trail Manager” tool using Java to analyze and optimize paths between nodes representing campsites or checkpoints in a wilderness setting.
+- Applied breadth-first search (BFS) algorithms to find the most efficient routes, reducing travel time and resource consumption.
 
 ### AES Encryption and Decryption (C, Makefile)
-Implemented an encryption and decryption tool using the Advanced Encryption Standard (AES), ensuring secure data transmission and storage.
-Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.
----
+- Implemented an encryption and decryption tool using the Advanced Encryption Standard (AES), ensuring secure data transmission and storage.
+- Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.gh
+
+
 
 ## Skills
+---
 - **Programming:** Java, Python, C++, C#, C, MATLAB, Arduino, PySpark, SQL, Bash, Golang
 - **Technology:** Git, Unix, Unit Testing, Hadoop, Linux, Big Data, venv, Data Lake/Warehouse, Postman
 - **Web Design:** HTML, AngularJS, JavaScript, REST API, CSS, WordPress, Elementor
-- **Databricks Certifications:** Machine Learning Associate, Generative AI, Data Engineering Associate
----
+
 
 ## Certifications
+---
 - [Machine Learning Associate](https://databricks.com/learn/certification/machine-learning-associate)
 - [Generative AI Associate](https://databricks.com/learn/certification/generative-ai-associate)
 - [Data Engineering Associate](https://databricks.com/learn/certification/data-engineering-associate)
----
+
 
 ## Contact
+---
 - [GitHub](https://github.com/muksaw)
 - [LinkedIn](https://www.linkedin.com/in/mukul-sauhta-4b4276234/)
