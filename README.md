@@ -45,7 +45,7 @@
 
 ### AES Encryption and Decryption (C, Makefile)
 - Implemented an encryption and decryption tool using the Advanced Encryption Standard (AES), ensuring secure data transmission and storage.
-- Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.gh
+- Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.
 
 
 
