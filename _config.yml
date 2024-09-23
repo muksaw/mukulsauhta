@@ -1,5 +1,5 @@
 title: Mukul Sauhta
 logo: /assets/img/headshot.jpg
-#logo
-#description
+description: |
+  Hi! I'm Mukul Sauhta, a driven fourth-year Computer Science student at North Carolina State University, specializing in software engineering, data engineering, and full-stack development. My passion lies in building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise. Recently, I worked as a Data Engineer Intern at Perdis AI LLC, where I enhanced data monitoring capabilities through cutting-edge tools like PySpark and Delta Lake. I am also deeply involved in web development and backend infrastructure, having contributed to the creation and maintenance of multiple high-performing websites. Outside of my technical pursuits, I am committed to continuous learning and love to explore new technologies and frameworks that shape the future of computing.
 theme: jekyll-theme-minimal
