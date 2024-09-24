@@ -17,6 +17,9 @@
 
 
 ## Projects
+
+
+---
 #### Here I've listed my projects, some of which have links directly to their repo! Others may not have links as a result of them being private tools, but if you would like to see them, don't hesitate to contact me!
 
   
