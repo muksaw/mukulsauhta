@@ -24,16 +24,16 @@
 
   
 ---
-### Multi-Platform Streaming Monitor
+### (Multi-Platform Streaming Monitor)[https://github.com/Jokocak/StreamingExtension]
 - Developed a Chrome extension using **JavaScript**, **Twitch API**, and **YouTube API** to monitor the live status of 100 streamers.
 
-### CoffeeMaker Simulation
+### (CoffeeMaker Simulation)[https://github.com/muksaw/CoffeeMaker]
 - Contributed to unit testing and frontend layout improvements for a coffee recipe management system using **Java**, **Maven**, and **JUnit**.
 
 ### CUDA-Accelerated Vector Calculation
 - Implemented a CUDA algorithm in **C** for parallel processing to optimize performance in vector magnitude calculations.
 
-### Beesbridge LLC Website
+### (Beesbridge LLC Website)[https://beesbridge.us/]
 - Created and maintained a website for a boutique data engineering company using WordPress.
 - Integrated custom HTML and CSS to extend WordPress functionality, ensuring the site’s standout design.
 
@@ -45,7 +45,7 @@
 - Implemented SCD Type 2 to track historical changes in dimensional data, ensuring full visibility of past data states for reliable analysis.
 - Utilized Delta Lake, PySpark, and SQL to efficiently manage records by merging new data with existing datasets and tracking changes using dynamic updates and versioning.
 
-### TrailManager
+### (TrailManager)[https://github.com/muksaw/TrailManager]
 - Created a “Trail Manager” tool using Java to analyze and optimize paths between nodes representing campsites or checkpoints in a wilderness setting.
 - Applied breadth-first search (BFS) algorithms to find the most efficient routes, reducing travel time and resource consumption.
 
