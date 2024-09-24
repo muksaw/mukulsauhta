@@ -17,6 +17,7 @@
 
 
 ## Projects
+- Here I've listed my projects, some of which have links directly to their repo! Others may not have links as a result of them being private tools, but if you would like to see them, don't hesitate to contact me!
 ---
 ### Multi-Platform Streaming Monitor
 - Developed a Chrome extension using **JavaScript**, **Twitch API**, and **YouTube API** to monitor the live status of 100 streamers.
