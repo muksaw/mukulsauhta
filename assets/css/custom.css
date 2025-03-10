@@ -1,4 +1,4 @@
-/* Reduce whitespace and improve overall layout */
+/* Base layout */
 .wrapper {
   max-width: 960px;
   margin: 0 auto;
@@ -8,7 +8,7 @@
 section {
   width: 100%;
   float: none;
-  padding-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 header {
@@ -30,7 +30,7 @@ header {
   }
 }
 
-/* Improve typography and spacing */
+/* Typography */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
@@ -38,41 +38,33 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  margin-top: 24px;
-  margin-bottom: 16px;
+  color: #333;
   font-weight: 600;
-  color: #222;
+  margin-top: 20px;
+  margin-bottom: 15px;
 }
 
 h1 {
   font-size: 2em;
+  margin-bottom: 20px;
 }
 
 h2 {
   font-size: 1.5em;
-  margin-top: 20px;
-  margin-bottom: 15px;
   padding-bottom: 8px;
-  border-bottom: none;
 }
 
 h3 {
   font-size: 1.3em;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-h4 {
-  font-size: 1.1em;
+p {
+  margin-bottom: 12px;
 }
 
-/* Enhance horizontal rules */
-hr {
-  border: 0;
-  height: 1px;
-  background-color: #ddd;
-  margin: 25px 0;
-}
-
-/* Improve links */
+/* Links */
 a {
   color: #0066cc;
   text-decoration: none;
@@ -84,7 +76,44 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Project section styling */
+/* Lists */
+ul {
+  padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+/* Main content sections */
+.main-content section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.main-content section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+/* Section dividers */
+.education-section:before, 
+.experience-section:before, 
+.projects-section:before, 
+.skills-section:before, 
+.certifications-section:before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+  margin-bottom: 15px;
+  margin-top: 5px;
+}
+
+/* Project styling */
 .project {
   margin-bottom: 15px;
   padding-bottom: 10px;
@@ -93,6 +122,73 @@ a:hover {
 
 .project:last-child {
   border-bottom: none;
+}
+
+.project h3 {
+  margin-bottom: 10px;
+}
+
+.project ul {
+  margin-top: 5px;
+}
+
+/* Job styling */
+.job {
+  margin-bottom: 10px;
+}
+
+/* Sidebar styling */
+.sidebar-contact {
+  margin-top: 20px;
+}
+
+.sidebar-contact a,
+.sidebar-contact p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.sidebar-contact a:hover {
+  color: #0066cc;
+}
+
+.sidebar-contact i {
+  width: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.location {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.contact-heading {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Hide GitHub elements */
+.view-on-github, 
+footer p:first-of-type,
+footer p:nth-of-type(2) {
+  display: none !important;
+}
+
+/* Footer styling */
+footer p:last-of-type {
+  text-align: right;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: 30px;
 }
 
 /* Skills section styling */
@@ -152,53 +248,6 @@ section > h2 ~ ul + h2 {
   border-top: 1px solid #ddd;
 }
 
-/* Hide unwanted GitHub elements */
-.view-on-github, 
-footer p:first-of-type,
-footer p:nth-of-type(2) {
-  display: none !important;
-}
-
-/* Move the "Hosted on GitHub Pages" text to the bottom right */
-footer p:last-of-type {
-  text-align: right;
-  font-size: 0.8em;
-  color: #999;
-  margin-top: 50px;
-}
-
-/* Style the sidebar contact links */
-.sidebar-contact {
-  margin-top: 20px;
-}
-
-.sidebar-contact a,
-.sidebar-contact p {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  color: #555;
-  text-decoration: none;
-  font-size: 0.95em;
-}
-
-.sidebar-contact a:hover {
-  color: #0066cc;
-}
-
-.sidebar-contact i {
-  width: 20px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-/* Style for location */
-.location {
-  margin-top: 20px;
-  font-size: 0.95em;
-  color: #555;
-}
-
 /* Add university style */
 .university {
   margin-top: 5px;
@@ -228,18 +277,6 @@ section {
   margin-bottom: 40px;
 }
 
-/* Add dividers between sections */
-.main-content section {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-}
-
-.main-content section:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-}
-
 /* Project styling */
 .project {
   margin-bottom: 25px;
@@ -250,19 +287,6 @@ section {
 .project:last-child {
   border-bottom: none;
   margin-bottom: 0;
-}
-
-.project h3 {
-  margin-bottom: 10px;
-}
-
-.project ul {
-  margin-top: 5px;
-}
-
-/* Job styling */
-.job {
-  margin-bottom: 10px;
 }
 
 /* Heading styling */
@@ -283,33 +307,8 @@ h2 {
   padding-bottom: 10px;
 }
 
-h3 {
-  font-size: 1.3em;
-  margin-top: 20px;
-  margin-bottom: 10px;
-}
-
-/* List styling */
-ul {
-  padding-left: 20px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-
-li {
-  margin-bottom: 5px;
-}
-
-/* Link styling */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-a:hover {
-  color: #004080;
-  text-decoration: underline;
+h4 {
+  font-size: 1.1em;
 }
 
 /* Adjust paragraph spacing */
