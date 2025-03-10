@@ -115,8 +115,41 @@ footer p:last-of-type {
 
 /* Project styling - add border to each project */
 .project {
+  display: flex;
+  gap: 15px;
   margin-bottom: 20px;
   padding-bottom: 15px;
+}
+
+.project-image {
+  width: 25px;
+  height: 25px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-top: 45px; /* Align with the first bullet point */
+}
+
+.project-content {
+  flex: 1;
+}
+
+/* Reset the bullet points */
+.project ul {
+  padding-left: 20px; /* Restore default bullet points */
+  margin: 0;
+}
+
+.project li {
+  list-style: disc; /* Restore bullet points */
+}
+
+/* Remove the previous bullet point image styling */
+.project-bullet {
+  display: block;
+}
+
+.bullet-image {
+  display: none;
 }
 
 /* Remove any previous section dividers */
@@ -362,31 +395,6 @@ html {
 .certifications-section a:hover {
   color: #004080;
   text-decoration: none;
-}
-
-/* Project bullet point image styling */
-.project-bullet {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  margin-bottom: 8px;
-}
-
-.bullet-image {
-  width: 20px;  /* Same size as bullet points */
-  height: 20px;
-  object-fit: contain;
-  margin-top: 3px; /* Align with text */
-}
-
-/* Hide default bullet points when using images */
-.project-bullet {
-  list-style: none;
-}
-
-.project ul {
-  padding-left: 0;
-  margin-left: 0;
 }
 
   
