@@ -32,11 +32,12 @@ h2 {
 a {
   color: #0066cc;
   text-decoration: none;
+  font-weight: inherit;
 }
 
 a:hover {
   color: #004080;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 /* Style the sidebar */
@@ -279,6 +280,7 @@ p {
 .nav-link:hover {
   color: #fff;
   text-decoration: none;
+  font-weight: 500;
 }
 
 .nav-link:hover::after {
@@ -354,6 +356,18 @@ html {
 
 .external-link-icon:hover {
   transform: scale(1.1);
+}
+
+/* About section link styling */
+.about-section a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+.about-section a:hover {
+  color: #004080;
+  text-decoration: none;
 }
 
   
