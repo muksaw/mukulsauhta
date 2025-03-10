@@ -19,8 +19,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   padding-bottom: 8px;
-  margin-top: 32px;
   border-bottom: none;
+  margin-top: 32px;
 }
 
 /* Style links */
@@ -98,26 +98,38 @@ footer p:last-of-type {
   }
 }
 
-/* Content sections */
-.main-content section {
-  padding-bottom: 15px;
-  margin-bottom: 15px;
-  border-bottom: none;
+/* Content sections - add bottom border to main sections */
+.about-section,
+.education-section,
+.experience-section,
+.projects-section,
+.skills-section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 
-.main-content section:last-child {
+/* Remove border from the last section */
+.certifications-section {
   border-bottom: none;
+  padding-bottom: 25px;
+  margin-bottom: 25px;
 }
 
-/* Project styling */
+/* Project styling - add border to each project */
 .project {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #f0f0f0;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
 }
 
-.project:last-child {
-  border-bottom: none;
+/* Remove any previous section dividers */
+.education-section:before, 
+.experience-section:before, 
+.projects-section:before, 
+.skills-section:before, 
+.certifications-section:before {
+  content: none;
 }
 
 /* Skills section styling */
@@ -153,20 +165,6 @@ footer p:last-of-type {
   margin-right: 5px;
   background-size: contain;
   background-repeat: no-repeat;
-}
-
-/* Add section dividers */
-h2:after {
-  content: none;
-}
-
-/* Add dividers between sections */
-section > h2 ~ h2,
-section > h2 ~ p + h2,
-section > h2 ~ ul + h2 {
-  margin-top: 40px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
 }
 
 /* Add university style */
@@ -211,22 +209,19 @@ p {
 .skills-section, 
 .certifications-section {
   position: relative;
-  border-bottom: 1px solid #eee;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
 }
 
-/* Remove the pseudo-element borders that were creating duplicate lines */
+/* Add a subtle top border to create visual separation */
 .education-section:before, 
 .experience-section:before, 
 .projects-section:before, 
 .skills-section:before, 
 .certifications-section:before {
-  content: none;
-}
-
-/* Remove the last section's bottom border */
-.certifications-section {
-  border-bottom: none;
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
   
