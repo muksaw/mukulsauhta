@@ -104,7 +104,6 @@ footer p:last-of-type {
 .experience-section,
 .projects-section,
 .skills-section {
-  border-bottom: 1px solid #eee;
   padding-bottom: 25px;
   margin-bottom: 25px;
 }
