@@ -149,4 +149,66 @@ section > h2 ~ ul + h2 {
   padding-top: 20px;
   border-top: 1px solid #ddd;
 }
+
+/* Hide unwanted GitHub elements */
+.view-on-github, 
+footer p:first-of-type,
+footer p:nth-of-type(2) {
+  display: none !important;
+}
+
+/* Move the "Hosted on GitHub Pages" text to the bottom right */
+footer p:last-of-type {
+  text-align: right;
+  font-size: 0.8em;
+  color: #999;
+  margin-top: 50px;
+}
+
+/* Style the sidebar contact links */
+.sidebar-contact {
+  margin-top: 20px;
+}
+
+.sidebar-contact a,
+.sidebar-contact p {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+  color: #555;
+  text-decoration: none;
+  font-size: 0.95em;
+}
+
+.sidebar-contact a:hover {
+  color: #0066cc;
+}
+
+.sidebar-contact i {
+  width: 20px;
+  margin-right: 10px;
+  text-align: center;
+}
+
+/* Style for location */
+.location {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Add university style */
+.university {
+  margin-top: 5px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+/* Add bio style */
+.bio {
+  margin-top: 15px;
+  font-size: 0.95em;
+  color: #555;
+  line-height: 1.4;
+}
   

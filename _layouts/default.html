@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
+    {% include head-custom.html %}
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
+        
+        {% if site.logo %}
+          <img src="{{site.logo | relative_url}}" alt="Logo" />
+        {% endif %}
+
+        <div class="sidebar-contact">
+          <p class="university">North Carolina State University</p>
+          <p class="bio">B.S. Student in Computer Science, specializing in Data Engineering</p>
+          
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Raleigh, NC</p>
+          
+          <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </header>
+      <section>
+
+      {{ content }}
+
+      </section>
+      <footer>
+        <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+      </footer>
+    </div>
+    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
+  </body>
+</html> 
