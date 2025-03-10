@@ -116,21 +116,21 @@ footer p:last-of-type {
 /* Project styling */
 .project {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  align-items: flex-start; /* Align items to the top */
+  align-items: center;
 }
 
 .project-image {
-  width: 60px; /* Smaller image size */
-  height: 60px;
+  width: 80px;
+  height: 80px;
   object-fit: contain;
   flex-shrink: 0;
   background-color: #f5f5f5;
-  padding: 8px;
-  border-radius: 6px;
-  margin-top: 4px; /* Small offset to align with title */
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 0;
 }
 
 .project-content {
@@ -140,7 +140,7 @@ footer p:last-of-type {
 .project-content h3 {
   margin-top: 0;
   margin-bottom: 12px;
-  font-size: 1.2em; /* Adjust title size if needed */
+  font-size: 1.2em;
 }
 
 /* Reset and style the bullet points */
