@@ -364,4 +364,29 @@ html {
   text-decoration: none;
 }
 
+/* Project bullet point image styling */
+.project-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.bullet-image {
+  width: 20px;  /* Same size as bullet points */
+  height: 20px;
+  object-fit: contain;
+  margin-top: 3px; /* Align with text */
+}
+
+/* Hide default bullet points when using images */
+.project-bullet {
+  list-style: none;
+}
+
+.project ul {
+  padding-left: 0;
+  margin-left: 0;
+}
+
   
