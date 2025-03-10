@@ -19,8 +19,8 @@ h1, h2, h3, h4, h5, h6 {
 
 h2 {
   padding-bottom: 8px;
-  border-bottom: 1px solid #eee;
   margin-top: 32px;
+  border-bottom: none;
 }
 
 /* Style links */
@@ -100,9 +100,9 @@ footer p:last-of-type {
 
 /* Content sections */
 .main-content section {
-  border-bottom: 1px solid #eee;
   padding-bottom: 15px;
   margin-bottom: 15px;
+  border-bottom: none;
 }
 
 .main-content section:last-child {
@@ -211,19 +211,22 @@ p {
 .skills-section, 
 .certifications-section {
   position: relative;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
-/* Add a subtle top border to create visual separation */
+/* Remove the pseudo-element borders that were creating duplicate lines */
 .education-section:before, 
 .experience-section:before, 
 .projects-section:before, 
 .skills-section:before, 
 .certifications-section:before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
-  margin-bottom: 15px;
-  margin-top: 5px;
+  content: none;
+}
+
+/* Remove the last section's bottom border */
+.certifications-section {
+  border-bottom: none;
 }
   
