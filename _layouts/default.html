@@ -57,8 +57,40 @@
         <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
       </footer>
     </div>
+    <div class="lightbox-container" id="lightbox">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <div class="lightbox-content">
+        <img class="lightbox-image" id="lightbox-img" src="" alt="Expanded project image">
+      </div>
+    </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script>
+      // Lightbox functionality
+      function openLightbox(imgSrc) {
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+      }
+      
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Re-enable scrolling
+      }
+      
+      // Close lightbox when clicking outside the image
+      document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target !== document.getElementById('lightbox-img')) {
+          closeLightbox();
+        }
+      });
+      
+      // Close lightbox with Escape key
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+      
       window.onload = function() {
         window.scrollTo(0, 0);
       }
