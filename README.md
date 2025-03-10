@@ -64,8 +64,3 @@ Here I've listed my projects, some of which have links directly to their repo! O
 - [Machine Learning Associate](https://databricks.com/learn/certification/machine-learning-associate)
 - [Generative AI Associate](https://www.databricks.com/resources/learn/training/generative-ai-fundamentals?scid=7018Y000001Fi0MQAS&utm_medium=paid+search&utm_source=google&utm_campaign=20398881968&utm_adgroup=146898983890&utm_content=training&utm_offer=generative-ai-fundamentals&utm_ad=667123197773&utm_term=databricks%20generative%20ai%20certification&gad_source=1&gclid=Cj0KCQjwo8S3BhDeARIsAFRmkOMa4SLMs4ZkBLVR0asaE-czIOZm3NeOpnwk6R3TOWym5o_pQyyjlNcaAoujEALw_wcB)
 - [Data Engineering Associate](https://www.databricks.com/learn/certification/data-engineer-associate)
-
-## Contact
-
-- [GitHub](https://github.com/muksaw)
-- [LinkedIn](https://www.linkedin.com/in/mukul-sauhta-4b4276234/)
