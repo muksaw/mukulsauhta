@@ -49,9 +49,11 @@ h1 {
 }
 
 h2 {
-  font-size: 1.6em;
-  border-bottom: 1px solid #eee;
+  font-size: 1.5em;
+  margin-top: 20px;
+  margin-bottom: 15px;
   padding-bottom: 8px;
+  border-bottom: none;
 }
 
 h3 {
@@ -84,9 +86,9 @@ a:hover {
 
 /* Project section styling */
 .project {
-  margin-bottom: 25px;
-  padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
 }
 
 .project:last-child {
@@ -228,13 +230,14 @@ section {
 
 /* Add dividers between sections */
 .main-content section {
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 30px;
-  margin-bottom: 30px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
 }
 
 .main-content section:last-child {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* Project styling */
@@ -259,7 +262,7 @@ section {
 
 /* Job styling */
 .job {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 /* Heading styling */
@@ -289,10 +292,12 @@ h3 {
 /* List styling */
 ul {
   padding-left: 20px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 li {
-  margin-bottom: 8px;
+  margin-bottom: 5px;
 }
 
 /* Link styling */
@@ -305,5 +310,33 @@ a {
 a:hover {
   color: #004080;
   text-decoration: underline;
+}
+
+/* Adjust paragraph spacing */
+p {
+  margin-bottom: 12px;
+}
+
+/* Add subtle visual separation between major sections */
+.education-section, 
+.experience-section, 
+.projects-section, 
+.skills-section, 
+.certifications-section {
+  position: relative;
+}
+
+/* Add a subtle top border to create visual separation */
+.education-section:before, 
+.experience-section:before, 
+.projects-section:before, 
+.skills-section:before, 
+.certifications-section:before {
+  content: "";
+  display: block;
+  height: 1px;
+  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+  margin-bottom: 15px;
+  margin-top: 5px;
 }
   
