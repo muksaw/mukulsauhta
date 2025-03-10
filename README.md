@@ -1,6 +1,6 @@
-# Aspiring Software/Data Engineer
+# Aspiring Data Engineer
 
-#### Hello! I'm Mukul, a driven fourth-year [Computer Science](https://www.csc.ncsu.edu/) student at [North Carolina State University](https://www.ncsu.edu/), specializing in software engineering, data engineering, and full-stack development.
+I'm a driven fourth-year [Computer Science](https://www.csc.ncsu.edu/) student at [North Carolina State University](https://www.ncsu.edu/), specializing in software engineering, data engineering, and full-stack development.
 
 I love building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise.
 
