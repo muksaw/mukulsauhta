@@ -351,13 +351,15 @@ html {
 }
 
 /* About section link styling */
-.about-section a {
+.about-section a,
+.certifications-section a {
   color: #0066cc;
   text-decoration: none;
   font-weight: inherit;
 }
 
-.about-section a:hover {
+.about-section a:hover,
+.certifications-section a:hover {
   color: #004080;
   text-decoration: none;
 }
