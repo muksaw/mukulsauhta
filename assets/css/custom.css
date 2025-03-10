@@ -113,34 +113,44 @@ footer p:last-of-type {
   margin-bottom: 25px;
 }
 
-/* Project styling - add border to each project */
+/* Project styling */
 .project {
   display: flex;
-  gap: 15px;
-  margin-bottom: 20px;
-  padding-bottom: 15px;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
 }
 
 .project-image {
-  width: 25px;
-  height: 25px;
+  width: 100px; /* Larger image size */
+  height: 100px;
   object-fit: contain;
   flex-shrink: 0;
-  margin-top: 45px; /* Align with the first bullet point */
+  align-self: flex-start; /* Align to top */
+  margin-top: 5px; /* Small offset from top */
+  background-color: #f5f5f5; /* Light background for the image */
+  padding: 10px;
+  border-radius: 8px;
 }
 
 .project-content {
   flex: 1;
 }
 
-/* Reset the bullet points */
+.project-content h3 {
+  margin-top: 0; /* Remove top margin to align with image */
+  margin-bottom: 15px;
+}
+
+/* Reset and style the bullet points */
 .project ul {
-  padding-left: 20px; /* Restore default bullet points */
+  padding-left: 20px;
   margin: 0;
 }
 
 .project li {
-  list-style: disc; /* Restore bullet points */
+  list-style: disc;
+  margin-bottom: 8px;
 }
 
 /* Remove the previous bullet point image styling */
