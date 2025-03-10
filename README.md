@@ -1,8 +1,6 @@
-# Aspiring Data Engineer
+# About Me
 
-I'm a driven fourth-year [Computer Science](https://www.csc.ncsu.edu/) student at [North Carolina State University](https://www.ncsu.edu/), specializing in software engineering, data engineering, and full-stack development.
-
-I love building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise.
+I'm an aspiring data engineer with a passion for building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise.
 
 Recently, I worked as a Data Engineer Intern at Perdis AI LLC, where I enhanced data monitoring capabilities through cutting-edge tools like [PySpark](https://spark.apache.org/docs/latest/api/python/) and [Delta Lake](https://docs.databricks.com/delta/index.html).
 
