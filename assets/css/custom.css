@@ -412,7 +412,7 @@ html {
 
 /* Section spacing */
 .about-section {
-  margin-bottom: 10px; /* Reduced from 20px */
+  margin-bottom: 0px; /* Reduced from 20px */
 }
 
 .education-section {
@@ -422,7 +422,7 @@ html {
 
 /* Adjust heading spacing */
 .education-section h2 {
-  margin-top: 15px; /* Reduced from 25px */
+  margin-top: 5px; /* Reduced from 25px */
   padding-top: 5px; /* Reduced from 10px */
 }
 
