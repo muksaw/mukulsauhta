@@ -493,4 +493,9 @@ html {
   color: #3498db;
 }
 
+/* Add spacing after projects intro paragraph */
+.projects-section > p {
+  margin-bottom: 10px; /* Increased from default */
+}
+
   
