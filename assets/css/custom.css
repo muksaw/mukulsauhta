@@ -495,7 +495,7 @@ html {
 
 /* Add spacing after projects intro paragraph */
 .projects-section > p {
-  margin-bottom: 10px; /* Increased from default */
+  margin-bottom: 25px; /* Increased from default */
 }
 
   
