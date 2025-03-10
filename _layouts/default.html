@@ -10,6 +10,19 @@
     {% include head-custom.html %}
   </head>
   <body>
+    <!-- Add the navigation menu at the top level -->
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+      </div>
+    </nav>
+
     <div class="wrapper">
       <header>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>

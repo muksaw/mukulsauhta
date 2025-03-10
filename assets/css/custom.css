@@ -8,6 +8,7 @@ body {
 /* Improve layout */
 .wrapper {
   max-width: 960px;
+  margin-top: 60px; /* Height of the navigation bar */
 }
 
 /* Style headings */
@@ -225,34 +226,58 @@ p {
   margin-top: 5px;
 }
 
-/* Navigation menu styling */
-.nav-menu {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-  margin: 20px 0 30px 0;
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-  position: sticky;
+/* Top navigation styling */
+.top-nav {
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   background-color: white;
-  z-index: 100;
+  border-bottom: 1px solid #eee;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  z-index: 1000;
 }
 
-.nav-menu a {
-  padding: 8px 12px;
-  border-radius: 4px;
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.nav-link {
+  padding: 15px 10px;
+  color: #666;
   text-decoration: none;
-  color: #333;
   font-weight: 500;
-  transition: all 0.2s ease;
+  font-size: 0.95em;
+  transition: color 0.2s ease;
 }
 
-.nav-menu a:hover {
-  background-color: #f5f5f5;
+.nav-link:hover {
   color: #0066cc;
   text-decoration: none;
+}
+
+/* Mobile responsiveness for navigation */
+@media screen and (max-width: 768px) {
+  .nav-container {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 0 10px;
+  }
+  
+  .nav-link {
+    padding: 15px 8px;
+    white-space: nowrap;
+  }
+}
+
+/* Remove the previous nav-menu styles */
+.nav-menu {
+  display: none;
 }
 
 /* Add some padding to section headings for the anchor links */
