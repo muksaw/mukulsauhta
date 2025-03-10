@@ -1,6 +1,130 @@
-hr {
-    border: 0;
-    height: 10px; /* this value to increase thickness */
-    background-color: #333; /* change the color as well */
+/* Reduce whitespace and improve overall layout */
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  width: 100%;
+  float: none;
+  padding-bottom: 30px;
+}
+
+header {
+  width: 270px;
+  float: left;
+  position: fixed;
+  padding: 30px 0;
+}
+
+@media print, screen and (max-width: 960px) {
+  header, section {
+    float: none;
+    position: static;
+    width: auto;
   }
+  
+  header {
+    padding: 20px 0;
+  }
+}
+
+/* Improve typography and spacing */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 24px;
+  margin-bottom: 16px;
+  font-weight: 600;
+  color: #222;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.6em;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+h3 {
+  font-size: 1.3em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+/* Enhance horizontal rules */
+hr {
+  border: 0;
+  height: 3px;
+  background-color: #0066cc;
+  margin: 25px 0;
+}
+
+/* Improve links */
+a {
+  color: #0066cc;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: #004080;
+  text-decoration: underline;
+}
+
+/* Project section styling */
+.project {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+/* Skills section styling */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-item {
+  background-color: #f5f5f5;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+/* Contact section styling */
+.contact-links {
+  display: flex;
+  gap: 15px;
+}
+
+.contact-links a {
+  display: inline-flex;
+  align-items: center;
+}
+
+.contact-links a:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
   
