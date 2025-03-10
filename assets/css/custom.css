@@ -1,95 +1,40 @@
-/* Reset and clean up duplicate styles */
-.wrapper {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Fix the header/content layout */
-header {
-  width: 270px;
-  float: left;
-  position: fixed;
-  padding: 30px 0;
-  overflow: hidden; /* Prevent content overflow */
-}
-
-section {
-  width: calc(100% - 300px);
-  float: right;
-  padding-bottom: 20px;
-  margin-left: 300px; /* Add margin to prevent overlap */
-}
-
-/* Mobile responsiveness */
-@media print, screen and (max-width: 960px) {
-  header, section {
-    float: none;
-    position: static;
-    width: auto;
-    margin: 0;
-  }
-  
-  header {
-    padding: 20px 0;
-  }
-}
-
-/* Typography */
+/* Basic styling */
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
   line-height: 1.6;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  font-weight: 600;
-  margin-top: 20px;
-  margin-bottom: 15px;
+/* Improve layout */
+.wrapper {
+  max-width: 960px;
 }
 
-h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
+/* Style headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #333;
+  margin-top: 24px;
+  margin-bottom: 16px;
 }
 
 h2 {
-  font-size: 1.5em;
   padding-bottom: 8px;
   border-bottom: 1px solid #eee;
-  margin-top: 30px;
+  margin-top: 32px;
 }
 
-h3 {
-  font-size: 1.3em;
-  margin-top: 20px;
-  margin-bottom: 10px;
+/* Style links */
+a {
+  color: #0066cc;
+  text-decoration: none;
 }
 
-/* Content sections */
-.main-content section {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 15px;
-  margin-bottom: 15px;
+a:hover {
+  color: #004080;
+  text-decoration: underline;
 }
 
-.main-content section:last-child {
-  border-bottom: none;
-}
-
-/* Project styling */
-.project {
-  margin-bottom: 15px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #f0f0f0;
-}
-
-.project:last-child {
-  border-bottom: none;
-}
-
-/* Sidebar styling */
+/* Style the sidebar */
 .sidebar-contact {
   margin-top: 20px;
 }
@@ -118,6 +63,12 @@ h3 {
   font-weight: 600;
 }
 
+.location {
+  margin-top: 20px;
+  font-size: 0.95em;
+  color: #555;
+}
+
 /* Hide GitHub elements */
 .view-on-github, 
 footer p:first-of-type,
@@ -133,29 +84,40 @@ footer p:last-of-type {
   margin-top: 30px;
 }
 
-/* Section dividers */
-.education-section:before, 
-.experience-section:before, 
-.projects-section:before, 
-.skills-section:before, 
-.certifications-section:before {
-  content: "";
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
+/* Mobile responsiveness */
+@media print, screen and (max-width: 960px) {
+  header, section {
+    float: none;
+    position: static;
+    width: auto;
+    margin: 0;
+  }
+  
+  header {
+    padding: 20px 0;
+  }
+}
+
+/* Content sections */
+.main-content section {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
   margin-bottom: 15px;
-  margin-top: 5px;
 }
 
-/* Job styling */
-.job {
-  margin-bottom: 10px;
+.main-content section:last-child {
+  border-bottom: none;
 }
 
-.location {
-  margin-top: 20px;
-  font-size: 0.95em;
-  color: #555;
+/* Project styling */
+.project {
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.project:last-child {
+  border-bottom: none;
 }
 
 /* Skills section styling */
