@@ -104,16 +104,7 @@ footer p:last-of-type {
   }
 }
 
-/* Content sections - add bottom border to main sections */
-.about-section,
-.education-section,
-.experience-section,
-.projects-section,
-.skills-section {
-  border-bottom: 1px solid #eee;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
+
 
 /* Remove border from the last section */
 .certifications-section {
