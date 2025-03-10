@@ -18,14 +18,16 @@ body {
 /* Style headings */
 h1, h2, h3, h4, h5, h6 {
   color: #333;
-  margin-top: 24px;
+  margin-top: 20px;
   margin-bottom: 16px;
 }
 
 h2 {
+  padding-top: 10px;
   padding-bottom: 8px;
   border-bottom: none;
-  margin-top: 32px;
+  margin-top: 25px;
+  scroll-margin-top: 70px;
 }
 
 /* Style links */
@@ -224,7 +226,7 @@ footer p:last-of-type {
 
 /* Section styling */
 section {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 /* Heading styling */
@@ -249,7 +251,7 @@ p {
 .skills-section, 
 .certifications-section {
   position: relative;
-  padding-bottom: 15px;
+  padding-bottom: 10px;
 }
 
 /* Add a subtle bottom border to create visual separation */
@@ -350,7 +352,7 @@ p {
 
 /* Add some padding to section headings for the anchor links */
 h2 {
-  padding-top: 15px;
+  padding-top: 10px;
   scroll-margin-top: 70px; /* This helps with the sticky nav when scrolling to anchors */
 }
 
