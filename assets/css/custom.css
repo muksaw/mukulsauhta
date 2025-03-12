@@ -124,7 +124,7 @@ footer p:last-of-type {
   position: relative;
   border-radius: 8px;
   padding: 20px;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .project-image-container {
@@ -561,9 +561,11 @@ header img {
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect only for projects */
+/* Hover effect for projects */
 .project:hover {
   background-color: rgba(0, 0, 0, 0.02);
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 /* Maintain image hover effect */
