@@ -124,7 +124,8 @@ footer p:last-of-type {
   position: relative;
   border-radius: 8px;
   padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  background-color: #f8f9fa;  /* Added permanent light background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-image-container {
@@ -563,7 +564,6 @@ header img {
 
 /* Hover effect for projects */
 .project:hover {
-  background-color: rgba(0, 0, 0, 0.02);
   transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -669,10 +669,9 @@ header h1 a:hover {
 
 /* Remove the negative margins that were causing overlap */
 .projects-section > .project {
-  margin: 0 0 20px 0; /* Reset margins, add space between projects */
+  margin: 0 0 20px 0;
 }
 
-/* Last project doesn't need bottom margin */
 .projects-section > .project:last-child {
   margin-bottom: 0;
 }
