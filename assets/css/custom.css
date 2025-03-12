@@ -548,4 +548,46 @@ header img {
   transform: none;
 }
 
+/* Hover effect for sections and projects */
+.about-section,
+.education-section,
+.experience-section,
+.skills-section,
+.certifications-section,
+.project {
+  position: relative;
+  border-radius: 8px;
+  padding: 15px;
+  margin: -15px;  /* Offset padding to maintain layout */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+.about-section:hover,
+.education-section:hover,
+.experience-section:hover,
+.skills-section:hover,
+.certifications-section:hover,
+.project:hover {
+  background-color: rgba(0, 0, 0, 0.02);  /* Very light grey */
+}
+
+/* Ensure project hover doesn't affect image hover */
+.project:hover .project-image {
+  transform: scale(1.05);  /* Maintain existing image hover effect */
+}
+
+/* Adjust project margins to account for new padding */
+.project {
+  margin-bottom: 15px;  /* Reduced to account for padding */
+}
+
+/* Maintain section dividers visibility */
+.education-section:after, 
+.experience-section:after, 
+.projects-section:after, 
+.skills-section:after {
+  z-index: 1;  /* Ensure divider stays visible */
+}
+
   
