@@ -117,11 +117,12 @@ footer p:last-of-type {
 
 /* Project styling */
 .project {
-  display: flex;
-  gap: 25px;
-  margin-bottom: 30px;
-  padding-bottom: 20px;
-  align-items: center;
+  position: relative;
+  border-radius: 8px;
+  padding: 15px;
+  margin: -15px;  /* Offset padding to maintain layout */
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;  /* Maintain spacing between projects */
 }
 
 .project-image-container {
@@ -562,12 +563,7 @@ header img {
   transition: background-color 0.3s ease;
 }
 
-/* Hover effect */
-.about-section:hover,
-.education-section:hover,
-.experience-section:hover,
-.skills-section:hover,
-.certifications-section:hover,
+/* Hover effect only for projects */
 .project:hover {
   background-color: rgba(0, 0, 0, 0.02);  /* Very light grey */
 }
@@ -575,11 +571,6 @@ header img {
 /* Ensure project hover doesn't affect image hover */
 .project:hover .project-image {
   transform: scale(1.05);  /* Maintain existing image hover effect */
-}
-
-/* Adjust project margins to account for new padding */
-.project {
-  margin-bottom: 15px;  /* Reduced to account for padding */
 }
 
 /* Maintain section dividers visibility */
