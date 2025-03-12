@@ -125,7 +125,10 @@ footer p:last-of-type {
   border-radius: 8px;
   padding: 20px;
   background-color: #f8f9fa;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateY(0); /* Set initial transform state */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Add subtle initial shadow */
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Explicit transitions */
 }
 
 .project-image-container {
