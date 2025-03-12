@@ -117,12 +117,16 @@ footer p:last-of-type {
 
 /* Project styling */
 .project {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  align-items: center;
   position: relative;
   border-radius: 8px;
   padding: 15px;
-  margin: -15px;  /* Offset padding to maintain layout */
+  margin: -15px;
   transition: background-color 0.3s ease;
-  margin-bottom: 15px;  /* Maintain spacing between projects */
 }
 
 .project-image-container {
@@ -155,10 +159,6 @@ footer p:last-of-type {
   justify-content: center;
   font-size: 12px;
   pointer-events: none;
-}
-
-.project-image-container:hover .project-image {
-  transform: scale(1.05);
 }
 
 .project-content {
@@ -565,12 +565,12 @@ header img {
 
 /* Hover effect only for projects */
 .project:hover {
-  background-color: rgba(0, 0, 0, 0.02);  /* Very light grey */
+  background-color: rgba(0, 0, 0, 0.02);
 }
 
-/* Ensure project hover doesn't affect image hover */
-.project:hover .project-image {
-  transform: scale(1.05);  /* Maintain existing image hover effect */
+/* Maintain image hover effect */
+.project-image-container:hover .project-image {
+  transform: scale(1.05);
 }
 
 /* Maintain section dividers visibility */
