@@ -124,8 +124,8 @@ footer p:last-of-type {
   position: relative;
   border-radius: 8px;
   padding: 20px;
-  background-color: #f8f9fa;  /* Added permanent light background */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: #f8f9fa;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .project-image-container {
@@ -748,6 +748,48 @@ header h1 a:hover {
 .coursework-text {
   margin: 5px 0;
   color: #555;
+}
+
+/* Skills section restyling */
+.skills-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skills-section li {
+  margin: 0;
+  padding: 0;
+}
+
+.skill-category {
+  margin-bottom: 20px;
+}
+
+.skill-category-title {
+  margin-bottom: 12px;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.skill-bubble {
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 20px;
+  color: #495057;
+  font-size: 0.95em;
+  transition: all 0.2s ease;
+}
+
+.skill-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
 }
 
   
