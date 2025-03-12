@@ -590,4 +590,62 @@ header img {
   z-index: 1;  /* Ensure divider stays visible */
 }
 
+/* Common link animation styles */
+.about-section a,
+.certifications-section a,
+.sidebar-contact a,
+header h1 a {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+/* Animated underline effect */
+.about-section a::after,
+.certifications-section a::after,
+.sidebar-contact a::after,
+header h1 a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #3498db;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+/* Hover effect */
+.about-section a:hover::after,
+.certifications-section a:hover::after,
+.sidebar-contact a:hover::after,
+header h1 a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Override any existing hover styles */
+.about-section a:hover,
+.certifications-section a:hover,
+.sidebar-contact a:hover,
+header h1 a:hover {
+  color: inherit;
+  text-decoration: none;
+  font-weight: inherit;
+}
+
+/* Specific adjustments for sidebar contact links */
+.sidebar-contact a {
+  padding-bottom: 2px; /* Add some space for the underline */
+}
+
+/* Ensure icons in sidebar don't get the underline */
+.sidebar-contact i {
+  position: relative;
+  z-index: 2;
+}
+
   
