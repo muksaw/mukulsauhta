@@ -675,4 +675,37 @@ header h1 a:hover {
   margin-bottom: 0;
 }
 
+/* Education section styling */
+.education-item h3 {
+  margin-bottom: 8px;
+  font-size: 1.2em;
+}
+
+.education-item p {
+  margin: 8px 0;
+}
+
+.education-details {
+  margin-top: 15px;
+}
+
+.education-details p {
+  margin-bottom: 5px;
+}
+
+.education-details ul {
+  margin: 0 0 15px 20px;
+}
+
+.coursework-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.coursework-list li {
+  line-height: 1.4;
+}
+
   
