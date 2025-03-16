@@ -813,7 +813,8 @@ header h1 a:hover {
 /* Certification styling */
 .certification-item {
   display: flex;
-  gap: 20px;
+  align-items: center;
+  gap: 15px;
   margin-bottom: 25px;
   padding: 20px;
   background-color: #f8f9fa;
@@ -827,10 +828,11 @@ header h1 a:hover {
 }
 
 .certification-logo {
-  width: 70px;
-  height: 70px;
+  width: 45px;  /* Reduced size */
+  height: 45px;  /* Reduced size */
   object-fit: contain;
   border-radius: 4px;
+  flex-shrink: 0;
 }
 
 .certification-content {
@@ -838,38 +840,25 @@ header h1 a:hover {
 }
 
 .certification-content h3 {
-  margin: 0 0 5px 0;
+  margin: 0 0 8px 0;
   font-size: 1.1em;
   color: #2c3e50;
 }
 
-.certification-issuer {
-  color: #666;
-  margin-bottom: 10px;
-}
-
 .certification-date {
+  display: inline-block;
+  padding: 6px 12px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
   color: #666;
   font-size: 0.9em;
-  margin-bottom: 12px;
-}
-
-.show-credential-btn {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 16px;
-  color: #2c3e50;
   text-decoration: none;
-  font-size: 0.9em;
   transition: all 0.2s ease;
 }
 
-.show-credential-btn:hover {
-  background-color: #f8f9fa;
-  border-color: #ccc;
-  color: #2c3e50;
+.certification-date:hover {
+  background-color: #e0e0e0;
+  color: #444;
   text-decoration: none;
 }
 
