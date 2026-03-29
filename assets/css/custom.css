@@ -956,28 +956,3 @@ header h1 a:hover {
     padding: 8px;
   }
 }
-
-/* Wider desktop composition: reduce side whitespace while keeping a clean look */
-header {
-  float: none;
-  width: auto;
-  position: sticky;
-  top: 76px;
-  align-self: start;
-}
-
-section {
-  float: none;
-  width: auto;
-  min-width: 0;
-}
-
-header img {
-  max-width: 260px;
-}
-
-@media screen and (max-width: 960px) {
-  header {
-    position: static;
-  }
-}
