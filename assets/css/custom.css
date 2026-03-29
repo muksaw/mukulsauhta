@@ -9,10 +9,15 @@ body {
 
 /* Improve layout */
 .wrapper {
-  max-width: 960px;
-  margin-top: 70px;
+  max-width: 1380px;
+  width: min(1380px, calc(100vw - 48px));
+  margin: 72px auto 0;
+  padding: 8px 8px 24px;
   scroll-margin-top: 70px;
   scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 36px;
 }
 
 /* Style headings */
@@ -103,6 +108,13 @@ footer p:last-of-type {
   
   header {
     padding: 20px 0;
+  }
+
+  .wrapper {
+    width: min(100vw - 24px, 100%);
+    margin-top: 62px;
+    display: block;
+    padding: 4px 0 20px;
   }
 }
 
@@ -311,16 +323,16 @@ p {
 
 .nav-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 14px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 24px;
 }
 
 .nav-link {
-  padding: 8px 15px;
+  padding: 8px 12px;
   color: #2c3e50;
   text-decoration: none;
   font-weight: 500;
