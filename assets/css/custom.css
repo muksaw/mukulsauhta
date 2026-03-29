@@ -947,13 +947,14 @@ header h1 a:hover {
 
 /* Nested graduate/classwork project spacing */
 .expandable-block > .project-list-nested {
-  margin-top: 16px;
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .project-list-nested > .project {
-  margin-bottom: 18px;
-}
-
-.project-list-nested > .project:last-child {
-  margin-bottom: 0;
+  margin: 0 !important;
+  border-radius: 8px;
+  background-color: #f8f9fa;
 }
