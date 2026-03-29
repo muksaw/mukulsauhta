@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Linux penguin icon">
+  <circle cx="100" cy="100" r="96" fill="#f4f7fb"/>
+  <ellipse cx="100" cy="102" rx="52" ry="78" fill="#111827"/>
+  <ellipse cx="100" cy="118" rx="34" ry="50" fill="#ffffff"/>
+  <ellipse cx="84" cy="84" rx="10" ry="12" fill="#ffffff"/>
+  <ellipse cx="116" cy="84" rx="10" ry="12" fill="#ffffff"/>
+  <circle cx="84" cy="87" r="4.5" fill="#111827"/>
+  <circle cx="116" cy="87" r="4.5" fill="#111827"/>
+  <path d="M100 90c8 0 15 5 18 12-4 2-10 4-18 4s-14-2-18-4c3-7 10-12 18-12z" fill="#facc15"/>
+  <ellipse cx="70" cy="160" rx="23" ry="14" fill="#facc15"/>
+  <ellipse cx="130" cy="160" rx="23" ry="14" fill="#facc15"/>
+</svg>
