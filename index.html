@@ -5,7 +5,7 @@ layout: default
 <div class="main-content">
   <section id="about" class="about-section">
     <h1><span class="section-emoji">📝</span>About</h1>
-    <p>I’m a software + data engineer focused on building production-ready systems end to end—from backend services and web apps to scalable data pipelines and analytics workflows.</p>
+    <p>I’m a software + data engineer focused on building production-ready systems end to end, from backend services and web apps to scalable data pipelines and analytics workflows.</p>
     <p>At <strong>Perdis AI</strong>, I built data observability and SCD Type 2 workflows with PySpark and Delta Lake. At <strong>Beesbridge</strong>, I deliver full-stack web solutions and maintain client-facing platforms.</p>
     <p>I’m currently pursuing an <strong>M.S. in Computer Science at NC State</strong>, with graduate work spanning systems, software engineering, cloud, AI/ML, and security.</p>
   </section>
@@ -98,7 +98,7 @@ layout: default
 
   <section id="projects" class="projects-section">
     <h2><span class="section-emoji">🚀</span>Projects</h2>
-    <p>Featured projects are shown below. Expand the coursework section for additional graduate systems/software projects.</p>
+    <p>Featured projects are shown below. Additional graduate-level projects are listed in a dedicated section further down.</p>
 
     <div class="project">
       <div class="project-image-container" onclick="openLightbox('assets/img/dataobservability.png')">
@@ -165,53 +165,52 @@ layout: default
       </div>
     </div>
 
-    <details class="expandable-block">
-      <summary>Graduate/Classwork Projects (CSC 501, CSC 510, and additional systems work)</summary>
-      <div class="project-list-nested">
-        <div class="project">
-          <div class="project-image-container" onclick="openLightbox('assets/img/446324.jpg')">
-            <img src="assets/img/446324.jpg" alt="Operating Systems Projects" class="project-image">
-            <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
-          </div>
-          <div class="project-content">
-            <h3>CSC 501 Operating Systems Projects 1–4 (C/XINU)</h3>
-            <ul>
-              <li><strong>Project 1:</strong> XINU environment bring-up, kernel build/debug workflow (QEMU/GDB), low-level systems tooling.</li>
-              <li><strong>Project 2:</strong> Implemented starvation-aware schedulers (exponential and Linux-like policies) and scheduling APIs.</li>
-              <li><strong>Project 3:</strong> Built demand paging support including virtual memory mapping and page-replacement instrumentation.</li>
-              <li><strong>Project 4:</strong> Implemented a Unix file-system defragmenter in C over raw disk images and block metadata.</li>
-            </ul>
-          </div>
-        </div>
+  </section>
 
-        <div class="project">
-          <div class="project-image-container" onclick="openLightbox('assets/img/coffeemaker.jpg')">
-            <img src="assets/img/coffeemaker.jpg" alt="Software Engineering Project" class="project-image">
-            <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
-          </div>
-          <div class="project-content">
-            <h3>CSC 510 Software Engineering Team Project</h3>
-            <ul>
-              <li>Collaborated in an engineering team with testing, maintainability, and iterative delivery focus.</li>
-              <li>Strengthened practical SDLC skills: requirements alignment, implementation, testing, and quality improvements.</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="project">
-          <div class="project-image-container" onclick="openLightbox('assets/img/aesencryption.png')">
-            <img src="assets/img/aesencryption.png" alt="AES Encryption" class="project-image">
-            <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
-          </div>
-          <div class="project-content">
-            <h3>AES Encryption and Decryption (C, Makefile)</h3>
-            <ul>
-              <li>Implemented AES-based encryption/decryption in C with build automation through Make.</li>
-            </ul>
-          </div>
-        </div>
+  <section id="graduate-projects" class="projects-section graduate-projects-section">
+    <h2><span class="section-emoji">🧪</span>Graduate/Classwork Projects</h2>
+    <div class="project">
+      <div class="project-image-container" onclick="openLightbox('assets/img/linux-logo.svg')">
+        <img src="assets/img/linux-logo.svg" alt="Linux logo for CSC 501 projects" class="project-image">
+        <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
       </div>
-    </details>
+      <div class="project-content">
+        <h3>CSC 501 Operating Systems Projects 1–4</h3>
+        <ul>
+          <li><strong>Project 1:</strong> XINU environment bring-up, kernel build/debug workflow (QEMU/GDB), low-level systems tooling.</li>
+          <li><strong>Project 2:</strong> Implemented starvation-aware schedulers (exponential and Linux-like policies) and scheduling APIs.</li>
+          <li><strong>Project 3:</strong> Built demand paging support including virtual memory mapping and page-replacement instrumentation.</li>
+          <li><strong>Project 4:</strong> Implemented a Unix file-system defragmenter in C over raw disk images and block metadata.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image-container" onclick="openLightbox('assets/img/coffeemaker.jpg')">
+        <img src="assets/img/coffeemaker.jpg" alt="Software Engineering Project" class="project-image">
+        <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="project-content">
+        <h3>CSC 510 Software Engineering Team Project</h3>
+        <ul>
+          <li>Collaborated in an engineering team with testing, maintainability, and iterative delivery focus.</li>
+          <li>Strengthened practical SDLC skills: requirements alignment, implementation, testing, and quality improvements.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="project-image-container" onclick="openLightbox('assets/img/aesencryption.png')">
+        <img src="assets/img/aesencryption.png" alt="AES Encryption" class="project-image">
+        <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="project-content">
+        <h3>AES Encryption and Decryption</h3>
+        <ul>
+          <li>Implemented AES-based encryption/decryption in C with build automation through Make.</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="skills" class="skills-section">
