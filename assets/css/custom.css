@@ -862,6 +862,14 @@ header h1 a:hover {
   text-decoration: none;
 }
 
+.certification-date-associate {
+  border: 2px solid #c0c0c0;
+}
+
+.certification-date-professional {
+  border: 2px solid #d4af37;
+}
+
   
 /* Compact, recruiter-first layout updates */
 .main-content {
