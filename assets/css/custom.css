@@ -863,3 +863,84 @@ header h1 a:hover {
 }
 
   
+
+/* Compact, recruiter-first layout updates */
+.main-content {
+  display: grid;
+  gap: 14px;
+}
+
+.main-content section {
+  margin-bottom: 8px;
+}
+
+.about-section p {
+  margin-bottom: 8px;
+}
+
+.compact-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.compact-card p {
+  margin-bottom: 6px;
+}
+
+.compact-card ul {
+  margin: 0 0 0 18px;
+}
+
+.expandable-block {
+  margin-top: 12px;
+  border: 1px solid #e8eaee;
+  border-radius: 10px;
+  background: #fcfcfd;
+  padding: 10px 12px;
+}
+
+.expandable-block summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #2c3e50;
+  list-style: none;
+}
+
+.expandable-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable-block summary::before {
+  content: '▸';
+  margin-right: 8px;
+  color: #607080;
+}
+
+.expandable-block[open] summary::before {
+  content: '▾';
+}
+
+.project-list-nested {
+  margin-top: 10px;
+}
+
+/* tighten image-heavy project cards slightly */
+.project {
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .project {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .project-image {
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+  }
+}
