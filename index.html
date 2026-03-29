@@ -1,324 +1,353 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mukul's Portfolio</title>
+    <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="#" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#skills" class="nav-link">Skills</a>
+      </div>
+    </nav>
 
-<div class="main-content">
-  <section id="about" class="about-section">
-    <h1><span class="section-emoji">📝</span>About</h1>
-    
-    <p>I'm an aspiring data engineer/full-stack developer with a passion for building efficient, scalable systems and tackling complex technical challenges through projects that blend creativity and technical expertise.</p>
-    
-    <p>Recently, I worked as a Data Engineer Intern at Perdis AI LLC, where I enhanced data monitoring capabilities through cutting-edge tools like <a href="https://spark.apache.org/docs/latest/api/python/">PySpark</a> and <a href="https://docs.databricks.com/delta/index.html">Delta Lake</a>.</p>
-    
-    <p>I am also deeply involved in web development and backend infrastructure, having created and maintained multiple <a href="https://beesbridge.us/">high-performing websites</a>, but I hope to only improve my skills in these fields.</p>
-    
-    <p>Beyond my technical pursuits, I enjoy <a href="https://www.faceit.com/en/players/muksaw">competitive gaming</a>, swimming, reading, and weightlifting. I am currently exploring graduate programs to further my expertise in data engineering and distributed systems.</p>
-  </section>
-  
-  <section id="education" class="education-section">
-    <h2><span class="section-emoji">🎓</span>Education</h2>
-    
-    <!-- Masters Section -->
-    <div class="education-item future-education">
-      <h3>Master of Science - Computer Science</h3>
-      <p><em>Program Selection In Progress</em></p>
-      <p class="status-text">Currently exploring graduate programs in Data Engineering and Distributed Systems</p>
-    </div>
+    <div class="wrapper">
+      <header>
+        <h1><a href="/">Mukul Sauhta</a></h1>
+        <img src="/assets/img/headshot.png" alt="Logo" />
 
-    <!-- Bachelors Section -->
-    <div class="education-item current-education">
-      <div class="education-content-wrapper">
-        <div class="education-image-container">
-          <img src="assets/img/ncsu-engr.png" alt="NCSU Logo" class="education-image">
-        </div>
-        <div class="education-content">
-          <h3>North Carolina State University - College of Engineering</h3>
-          <p><strong>B.S., Computer Science</strong> (<em>Expected May 2025</em>)</p>
-          <p><strong>GPA:</strong> 3.7 Cumulative / 3.75 Departmental</p>
-          
-          <div class="education-details">
-            <p><strong>Honors & Activities:</strong></p>
-            <ul>
-              <li>Dean's List</li>
-              <li>NCSU Hackathon Participant - Developed NCSUHealth</li>
-            </ul>
-            
-            <p><strong>Relevant Coursework:</strong></p>
-            <p class="coursework-text">Data Structures & Algorithms, Operating Systems, Automated Learning and Data Analysis, Intro to Artificial Intelligence, Software Development Fundamentals, Software Engineering, C and Software Tools, Computer Security, Computer Organization and Assembly Language, Senior Design (Capstone Project), Software Testing</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <section id="experience" class="experience-section">
-    <h2><span class="section-emoji">💼</span>Work Experience</h2>
-    <div class="job">
-      <p><strong>Data Engineer Intern @ Perdis AI LLC</strong> (<em>June 2024 - August 2024</em>)</p>
-    </div>
-    <div class="job">
-      <p><strong>Full-Stack Developer @ Beesbridge LLC</strong> (<em>December 2022 - Present</em>)</p>
-    </div>
-  </section>
-  
-  <section id="projects" class="projects-section">
-    <h2><span class="section-emoji">🚀</span>Projects</h2>
-    <p>Here I've listed my projects, some of which have links directly to their repo! Others may not have links as a result of them being private tools, but if you would like to see them, don't hesitate to contact me!</p>
-    
-    <!-- Data Observability Tool -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/dataobservability.png')">
-        <img src="assets/img/dataobservability.png" alt="Data Observability Tool" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>Data Observability Tool for Profile and Drift Metrics</h3>
-        <ul>
-          <li>Developed an open-source tool with PySpark to enhance data monitoring by implementing profile and drift metrics that aggregate, reformat, and analyze large incoming datasets incrementally.</li>
-          <li>Generated detailed visualizations and dashboards of big data through profiling metrics such as quantile distributions, frequent items, and numerous statistical calculations, which detect data drifts.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- SCD Type 2 -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/scdtype2.png')">
-        <img src="assets/img/scdtype2.png" alt="SCD Type 2" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>Data Engineering: Slowly Changing Dimension (SCD) Type 2</h3>
-        <ul>
-          <li>Implemented SCD Type 2 to track historical changes in dimensional data, ensuring full visibility of past data states for reliable analysis.</li>
-          <li>Utilized Delta Lake, PySpark, and SQL to efficiently manage records by merging new data with existing datasets and tracking changes using dynamic updates and versioning.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- NCSUHealth -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/ncsuhealth-logo.png')">
-        <img src="assets/img/ncsuhealth-logo.png" alt="NCSUHealth" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>
-          NCSUHealth
-          <a href="https://github.com/DavidMond9/NCSUHealth" target="_blank" class="external-link-icon" title="Open in new tab">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </h3>
-        <ul>
-          <li>Developed a full-stack health tracking application using <strong>React</strong>, <strong>Django</strong>, and <strong>MongoDB</strong> that processes and analyzes student nutrition and exercise data.</li>
-          <li>Implemented data pipeline integrations with NC State's dining database and designed scalable database schemas for efficient querying of user health metrics.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Beesbridge -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/beesbridge.jpeg')">
-        <img src="assets/img/beesbridge.jpeg" alt="Beesbridge" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>
-          Beesbridge LLC Website
-          <a href="https://beesbridge.us/" target="_blank" class="external-link-icon" title="Open in new tab">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </h3>
-        <ul>
-          <li>Created and maintained a website for a boutique data engineering company using WordPress.</li>
-          <li>Integrated custom HTML and CSS to extend WordPress functionality, ensuring the site's standout design.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- CUDA Vector Calculation -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/cudavector.png')">
-        <img src="assets/img/cudavector.png" alt="CUDA Vector" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>CUDA-Accelerated Vector Calculation</h3>
-        <ul>
-          <li>Implemented a CUDA algorithm in <strong>C</strong> for parallel processing to optimize performance in vector magnitude calculations.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- TrailManager -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/trailmanager.jpg')">
-        <img src="assets/img/trailmanager.jpg" alt="TrailManager" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>
-          TrailManager
-          <a href="https://github.com/muksaw/TrailManager" target="_blank" class="external-link-icon" title="Open in new tab">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </h3>
-        <ul>
-          <li>Created a "Trail Manager" tool using Java to analyze and optimize paths between nodes representing campsites or checkpoints in a wilderness setting.</li>
-          <li>Applied breadth-first search (BFS) algorithms to find the most efficient routes, reducing travel time and resource consumption.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- Multi-Platform Streaming Monitor -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/streamingextension.png')">
-        <img src="assets/img/streamingextension.png" alt="Streaming Monitor" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>
-          Multi-Platform Streaming Monitor
-          <a href="https://github.com/Jokocak/StreamingExtension" target="_blank" class="external-link-icon" title="Open in new tab">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </h3>
-        <ul>
-          <li>Developed a Chrome extension using <strong>JavaScript</strong>, <strong>Twitch API</strong>, and <strong>YouTube API</strong> to monitor the live status of 100 streamers.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- CoffeeMaker -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/coffeemaker.jpg')">
-        <img src="assets/img/coffeemaker.jpg" alt="CoffeeMaker" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>
-          CoffeeMaker Simulation
-          <a href="https://github.com/muksaw/CoffeeMaker" target="_blank" class="external-link-icon" title="Open in new tab">
-            <i class="fas fa-external-link-alt"></i>
-          </a>
-        </h3>
-        <ul>
-          <li>Contributed to unit testing and frontend layout improvements for a coffee recipe management system using <strong>Java</strong>, <strong>Maven</strong>, and <strong>JUnit</strong>.</li>
-        </ul>
-      </div>
-    </div>
-    
-    <!-- AES Encryption -->
-    <div class="project">
-      <div class="project-image-container" onclick="openLightbox('assets/img/aesencryption.png')">
-        <img src="assets/img/aesencryption.png" alt="AES Encryption" class="project-image">
-        <div class="expand-icon">
-          <i class="fas fa-expand-alt"></i>
-        </div>
-      </div>
-      <div class="project-content">
-        <h3>AES Encryption and Decryption (C, Makefile)</h3>
-        <ul>
-          <li>Implemented an encryption and decryption tool using the Advanced Encryption Standard (AES), ensuring secure data transmission and storage.</li>
-          <li>Developed the tool in C, optimizing it for performance and large files, with a Makefile for easy compilation and deployment.</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-  
-  <section id="skills" class="skills-section">
-    <h2><span class="section-emoji">🛠️</span>Skills</h2>
-    
-    <div class="skill-category">
-      <h3 class="skill-category-title">Data Engineering & Analytics</h3>
-      <ul>
-        <li><div class="skill-bubble">PySpark</div></li>
-        <li><div class="skill-bubble">SQL</div></li>
-        <li><div class="skill-bubble">Python</div></li>
-        <li><div class="skill-bubble">Big Data</div></li>
-        <li><div class="skill-bubble">Data Lake/Warehouse</div></li>
-        <li><div class="skill-bubble">Hadoop</div></li>
-        <li><div class="skill-bubble">PostgreSQL</div></li>
-        <li><div class="skill-bubble">Docker</div></li>
-      </ul>
-    </div>
+        <div class="sidebar-contact">
+          <p class="location"><i class="fas fa-map-marker-alt"></i> Raleigh, NC</p>
 
-    <div class="skill-category">
-      <h3 class="skill-category-title">Software Development</h3>
-      <ul>
-        <li><div class="skill-bubble">Java</div></li>
-        <li><div class="skill-bubble">C++</div></li>
-        <li><div class="skill-bubble">C</div></li>
-        <li><div class="skill-bubble">C#</div></li>
-        <li><div class="skill-bubble">Golang</div></li>
-        <li><div class="skill-bubble">React</div></li>
-        <li><div class="skill-bubble">Swift</div></li>
-        <li><div class="skill-bubble">MATLAB</div></li>
-        <li><div class="skill-bubble">Arduino</div></li>
-      </ul>
-    </div>
+          <h3 class="contact-heading">Contact Me</h3>
 
-    <div class="skill-category">
-      <h3 class="skill-category-title">Development Tools & Infrastructure</h3>
-      <ul>
-        <li><div class="skill-bubble">Git</div></li>
-        <li><div class="skill-bubble">Linux</div></li>
-        <li><div class="skill-bubble">Unix</div></li>
-        <li><div class="skill-bubble">Shell Scripting</div></li>
-        <li><div class="skill-bubble">Unit Testing</div></li>
-        <li><div class="skill-bubble">venv</div></li>
-        <li><div class="skill-bubble">Postman</div></li>
-        <li><div class="skill-bubble">Axios</div></li>
-        <li><div class="skill-bubble">Valgrind</div></li>
-        <li><div class="skill-bubble">GDB</div></li>
-        <li><div class="skill-bubble">Swing</div></li>
-      </ul>
-    </div>
-  </section>
-  
-  <section id="certifications" class="certifications-section">
-    <h2><span class="section-emoji">🏆</span>Certifications</h2>
-    
-    <!-- Generative AI Certification -->
-    <div class="certification-item">
-      <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
-      <div class="certification-content">
-        <h3>Databricks Certified Generative AI Engineer Associate</h3>
-        <a href="https://www.databricks.com/resources/learn/training/generative-ai-fundamentals" target="_blank" class="certification-date">Issued Oct 2024 · Expires Oct 2026</a>
-      </div>
+          <a href="mailto:mukul.sauhta@gmail.com"><i class="fas fa-envelope"></i> Email</a>
+          <a href="https://www.linkedin.com/in/mukul-sauhta-4b4276234"><i class="fab fa-linkedin"></i> LinkedIn</a>
+          <a href="https://github.com/muksaw"><i class="fab fa-github"></i> GitHub</a>
+        </div>
+      </header>
+
+      <section>
+        <div class="main-content">
+          <section id="about" class="about-section">
+            <h1><span class="section-emoji">📝</span>About</h1>
+            <p>I’m a software + data engineer focused on building production-ready systems end to end, from backend services and web apps to scalable data pipelines and analytics workflows.</p>
+            <p>At <strong>Perdis AI</strong>, I built data observability and SCD Type 2 workflows with PySpark and Delta Lake. At <strong>Beesbridge</strong>, I deliver full-stack web solutions and maintain client-facing platforms.</p>
+            <p>I’m currently pursuing an <strong>M.S. in Computer Science at NC State</strong>, with graduate work spanning systems, software engineering, cloud, AI/ML, and security.</p>
+          </section>
+
+          <section id="education" class="education-section">
+            <h2><span class="section-emoji">🎓</span>Education</h2>
+
+            <div class="education-item current-education">
+              <div class="education-content-wrapper">
+                <div class="education-image-container">
+                  <img src="assets/img/ncsu-engr.png" alt="NCSU Logo" class="education-image">
+                </div>
+                <div class="education-content">
+                  <h3>North Carolina State University - College of Engineering</h3>
+                  <p><strong>M.S., Computer Science</strong> (<em>Expected 2027</em>)</p>
+                  <div class="education-details">
+                    <p><strong>Graduate Coursework</strong></p>
+                    <ul>
+                      <li><strong>Completed:</strong> CSC 600 (Graduate Orientation), CSC 501 (Operating Systems Principles), CSC 510 (Software Engineering), CSC 547 (Cloud Computing Technology)</li>
+                      <li><strong>In Progress:</strong> CSC 520 (Artificial Intelligence), CSC 522 (Automated Learning and Data Analysis), CSC 574 (Computer &amp; Network Security)</li>
+                      <li><strong>Planned:</strong> CSC 503 (Computational Applied Logic)</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="education-item current-education">
+              <div class="education-content-wrapper">
+                <div class="education-image-container">
+                  <img src="assets/img/ncsu-engr.png" alt="NCSU Logo" class="education-image">
+                </div>
+                <div class="education-content">
+                  <h3>North Carolina State University - College of Engineering</h3>
+                  <p><strong>B.S., Computer Science</strong> (<em>May 2025</em>)</p>
+                  <div class="education-details">
+                    <p><strong>Highlights:</strong> Dean’s List, NCSU Hackathon participant (NCSUHealth)</p>
+                    <p class="coursework-text"><strong>Selected Undergraduate Coursework:</strong> Data Structures &amp; Algorithms, Software Engineering, Operating Systems, Artificial Intelligence, Automated Learning &amp; Data Analysis, C and Software Tools, Computer Security, Software Testing, Capstone Design.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="experience" class="experience-section">
+            <h2><span class="section-emoji">💼</span>Experience</h2>
+            <div class="job compact-card">
+              <p><strong>Data Engineer Intern · Perdis AI LLC</strong> (<em>June 2024 - August 2024</em>)</p>
+              <ul>
+                <li>Built profile/drift monitoring for large datasets using PySpark + Delta Lake.</li>
+                <li>Improved data reliability and visibility through dashboard-friendly metric outputs.</li>
+              </ul>
+            </div>
+            <div class="job compact-card">
+              <p><strong>Full-Stack Developer · Beesbridge LLC</strong> (<em>December 2022 - Present</em>)</p>
+              <ul>
+                <li>Built and maintained performant web platforms with custom frontend/backend integrations.</li>
+                <li>Shipped client-focused features while improving maintainability and UX.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section id="certifications" class="certifications-section">
+            <h2><span class="section-emoji">🏆</span>Certifications</h2>
+
+            <div class="certification-item">
+              <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
+              <div class="certification-content">
+                <h3>Databricks Certified Generative AI Engineer Associate</h3>
+                <a href="https://www.databricks.com/resources/learn/training/generative-ai-fundamentals" target="_blank" class="certification-date">Issued Oct 2024 · Expires Oct 2026</a>
+              </div>
+            </div>
+
+            <div class="certification-item">
+              <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
+              <div class="certification-content">
+                <h3>Databricks Certified Machine Learning Associate</h3>
+                <a href="https://databricks.com/learn/certification/machine-learning-associate" target="_blank" class="certification-date">Issued Jul 2024 · Expires Jul 2026</a>
+              </div>
+            </div>
+
+            <div class="certification-item">
+              <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
+              <div class="certification-content">
+                <h3>Databricks Certified Data Engineer Associate</h3>
+                <a href="https://www.databricks.com/learn/certification/data-engineer-associate" target="_blank" class="certification-date">Issued Jun 2024 · Expires Jun 2026</a>
+              </div>
+            </div>
+          </section>
+
+          <section id="projects" class="projects-section">
+            <h2><span class="section-emoji">🚀</span>Projects</h2>
+            <p>Featured projects are shown below. Expand the coursework section for additional graduate systems/software projects.</p>
+
+            <div class="project">
+              <div class="project-image-container" onclick="openLightbox('assets/img/dataobservability.png')">
+                <img src="assets/img/dataobservability.png" alt="Data Observability Tool" class="project-image">
+                <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+              </div>
+              <div class="project-content">
+                <h3>Data Observability Tool for Profile and Drift Metrics</h3>
+                <ul>
+                  <li>Built an observability pipeline in PySpark for incremental profile + drift analysis on large datasets.</li>
+                  <li>Produced actionable statistical outputs for reliability monitoring and anomaly detection.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-image-container" onclick="openLightbox('assets/img/scdtype2.png')">
+                <img src="assets/img/scdtype2.png" alt="SCD Type 2" class="project-image">
+                <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+              </div>
+              <div class="project-content">
+                <h3>Data Engineering: Slowly Changing Dimension (SCD) Type 2</h3>
+                <ul>
+                  <li>Implemented SCD Type 2 patterns with Delta Lake, SQL, and PySpark for historical data tracking.</li>
+                  <li>Enabled auditable versioned records for downstream analytics and BI reporting.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-image-container" onclick="openLightbox('assets/img/ncsuhealth-logo.png')">
+                <img src="assets/img/ncsuhealth-logo.png" alt="NCSUHealth" class="project-image">
+                <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+              </div>
+              <div class="project-content">
+                <h3>
+                  NCSUHealth
+                  <a href="https://github.com/DavidMond9/NCSUHealth" target="_blank" class="external-link-icon" title="Open in new tab">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </h3>
+                <ul>
+                  <li>Built a full-stack health platform with React, Django, and MongoDB for nutrition + exercise tracking.</li>
+                  <li>Integrated data pipelines and schema design for scalable health-metric queries.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="project">
+              <div class="project-image-container" onclick="openLightbox('assets/img/beesbridge.jpeg')">
+                <img src="assets/img/beesbridge.jpeg" alt="Beesbridge" class="project-image">
+                <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+              </div>
+              <div class="project-content">
+                <h3>
+                  Beesbridge LLC Website
+                  <a href="https://beesbridge.us/" target="_blank" class="external-link-icon" title="Open in new tab">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </h3>
+                <ul>
+                  <li>Delivered and maintained a production website with custom WordPress + HTML/CSS enhancements.</li>
+                </ul>
+              </div>
+            </div>
+
+            <details class="expandable-block">
+              <summary>Graduate/Classwork Projects (CSC 501, CSC 510, and additional systems work)</summary>
+              <div class="project-list-nested">
+                <div class="project">
+                  <div class="project-image-container" onclick="openLightbox('assets/img/446324.jpg')">
+                    <img src="assets/img/446324.jpg" alt="Operating Systems Projects" class="project-image">
+                    <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+                  </div>
+                  <div class="project-content">
+                    <h3>CSC 501 Operating Systems Projects 1–4 (C/XINU)</h3>
+                    <ul>
+                      <li><strong>Project 1:</strong> XINU environment bring-up, kernel build/debug workflow (QEMU/GDB), low-level systems tooling.</li>
+                      <li><strong>Project 2:</strong> Implemented starvation-aware schedulers (exponential and Linux-like policies) and scheduling APIs.</li>
+                      <li><strong>Project 3:</strong> Built demand paging support including virtual memory mapping and page-replacement instrumentation.</li>
+                      <li><strong>Project 4:</strong> Implemented a Unix file-system defragmenter in C over raw disk images and block metadata.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project">
+                  <div class="project-image-container" onclick="openLightbox('assets/img/coffeemaker.jpg')">
+                    <img src="assets/img/coffeemaker.jpg" alt="Software Engineering Project" class="project-image">
+                    <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+                  </div>
+                  <div class="project-content">
+                    <h3>CSC 510 Software Engineering Team Project</h3>
+                    <ul>
+                      <li>Collaborated in an engineering team with testing, maintainability, and iterative delivery focus.</li>
+                      <li>Strengthened practical SDLC skills: requirements alignment, implementation, testing, and quality improvements.</li>
+                    </ul>
+                  </div>
+                </div>
+
+                <div class="project">
+                  <div class="project-image-container" onclick="openLightbox('assets/img/aesencryption.png')">
+                    <img src="assets/img/aesencryption.png" alt="AES Encryption" class="project-image">
+                    <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+                  </div>
+                  <div class="project-content">
+                    <h3>AES Encryption and Decryption (C, Makefile)</h3>
+                    <ul>
+                      <li>Implemented AES-based encryption/decryption in C with build automation through Make.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </details>
+          </section>
+
+          <section id="skills" class="skills-section">
+            <h2><span class="section-emoji">🛠️</span>Skills</h2>
+
+            <div class="skill-category">
+              <h3 class="skill-category-title">Data Engineering &amp; Analytics</h3>
+              <ul>
+                <li><div class="skill-bubble">PySpark</div></li>
+                <li><div class="skill-bubble">SQL</div></li>
+                <li><div class="skill-bubble">Python</div></li>
+                <li><div class="skill-bubble">Delta Lake</div></li>
+                <li><div class="skill-bubble">Data Warehousing</div></li>
+                <li><div class="skill-bubble">PostgreSQL</div></li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-category-title">Software Engineering</h3>
+              <ul>
+                <li><div class="skill-bubble">Java</div></li>
+                <li><div class="skill-bubble">C</div></li>
+                <li><div class="skill-bubble">C++</div></li>
+                <li><div class="skill-bubble">JavaScript</div></li>
+                <li><div class="skill-bubble">React</div></li>
+                <li><div class="skill-bubble">Django</div></li>
+              </ul>
+            </div>
+
+            <div class="skill-category">
+              <h3 class="skill-category-title">Systems, Tooling &amp; Infra</h3>
+              <ul>
+                <li><div class="skill-bubble">Linux/Unix</div></li>
+                <li><div class="skill-bubble">Git</div></li>
+                <li><div class="skill-bubble">Docker</div></li>
+                <li><div class="skill-bubble">Shell Scripting</div></li>
+                <li><div class="skill-bubble">GDB</div></li>
+                <li><div class="skill-bubble">Valgrind</div></li>
+              </ul>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <footer>
+        <p>Hosted on GitHub Pages.</p>
+      </footer>
     </div>
 
-    <!-- Machine Learning Certification -->
-    <div class="certification-item">
-      <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
-      <div class="certification-content">
-        <h3>Databricks Certified Machine Learning Associate</h3>
-        <a href="https://databricks.com/learn/certification/machine-learning-associate" target="_blank" class="certification-date">Issued Jul 2024 · Expires Jul 2026</a>
+    <div class="lightbox-container" id="lightbox">
+      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+      <div class="lightbox-content">
+        <img class="lightbox-image" id="lightbox-img" src="" alt="Expanded project image">
       </div>
     </div>
 
-    <!-- Data Engineering Certification -->
-    <div class="certification-item">
-      <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
-      <div class="certification-content">
-        <h3>Databricks Certified Data Engineer Associate</h3>
-        <a href="https://www.databricks.com/learn/certification/data-engineer-associate" target="_blank" class="certification-date">Issued Jun 2024 · Expires Jun 2026</a>
-      </div>
-    </div>
-  </section>
-</div> 
+    <script>
+      function openLightbox(imgSrc) {
+        document.getElementById('lightbox-img').src = imgSrc;
+        document.getElementById('lightbox').style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeLightbox() {
+        document.getElementById('lightbox').style.display = 'none';
+        document.body.style.overflow = 'auto';
+      }
+
+      document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target !== document.getElementById('lightbox-img')) {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          closeLightbox();
+        }
+      });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        const sections = document.querySelectorAll('.main-content section');
+
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        sections.forEach(section => {
+          observer.observe(section);
+        });
+      });
+    </script>
+  </body>
+</html>

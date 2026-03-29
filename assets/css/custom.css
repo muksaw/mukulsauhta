@@ -9,10 +9,15 @@ body {
 
 /* Improve layout */
 .wrapper {
-  max-width: 960px;
-  margin-top: 70px;
+  max-width: 1380px;
+  width: min(1380px, calc(100vw - 48px));
+  margin: 72px auto 0;
+  padding: 8px 8px 24px;
   scroll-margin-top: 70px;
   scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+  gap: 36px;
 }
 
 /* Style headings */
@@ -103,6 +108,13 @@ footer p:last-of-type {
   
   header {
     padding: 20px 0;
+  }
+
+  .wrapper {
+    width: min(100vw - 24px, 100%);
+    margin-top: 62px;
+    display: block;
+    padding: 4px 0 20px;
   }
 }
 
@@ -311,16 +323,16 @@ p {
 
 .nav-container {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1380px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 14px;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 24px;
 }
 
 .nav-link {
-  padding: 8px 15px;
+  padding: 8px 12px;
   color: #2c3e50;
   text-decoration: none;
   font-weight: 500;
@@ -863,3 +875,109 @@ header h1 a:hover {
 }
 
   
+
+/* Compact, recruiter-first layout updates */
+.main-content {
+  display: grid;
+  gap: 14px;
+}
+
+.main-content section {
+  margin-bottom: 8px;
+}
+
+.about-section p {
+  margin-bottom: 8px;
+}
+
+.compact-card {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 14px 16px;
+  margin-bottom: 12px;
+}
+
+.compact-card p {
+  margin-bottom: 6px;
+}
+
+.compact-card ul {
+  margin: 0 0 0 18px;
+}
+
+.expandable-block {
+  margin-top: 12px;
+  border: 1px solid #e8eaee;
+  border-radius: 10px;
+  background: #fcfcfd;
+  padding: 10px 12px;
+}
+
+.expandable-block summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #2c3e50;
+  list-style: none;
+}
+
+.expandable-block summary::-webkit-details-marker {
+  display: none;
+}
+
+.expandable-block summary::before {
+  content: '▸';
+  margin-right: 8px;
+  color: #607080;
+}
+
+.expandable-block[open] summary::before {
+  content: '▾';
+}
+
+.project-list-nested {
+  margin-top: 10px;
+}
+
+/* tighten image-heavy project cards slightly */
+.project {
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+@media screen and (max-width: 768px) {
+  .project {
+    gap: 14px;
+    padding: 12px;
+  }
+
+  .project-image {
+    width: 64px;
+    height: 64px;
+    padding: 8px;
+  }
+}
+
+/* Wider desktop composition: reduce side whitespace while keeping a clean look */
+header {
+  float: none;
+  width: auto;
+  position: sticky;
+  top: 76px;
+  align-self: start;
+}
+
+section {
+  float: none;
+  width: auto;
+  min-width: 0;
+}
+
+header img {
+  max-width: 260px;
+}
+
+@media screen and (max-width: 960px) {
+  header {
+    position: static;
+  }
+}
