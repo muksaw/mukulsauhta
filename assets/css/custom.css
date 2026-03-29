@@ -944,3 +944,16 @@ header h1 a:hover {
     padding: 8px;
   }
 }
+
+/* Nested graduate/classwork project spacing */
+.expandable-block > .project-list-nested {
+  margin-top: 16px;
+}
+
+.project-list-nested > .project {
+  margin-bottom: 18px;
+}
+
+.project-list-nested > .project:last-child {
+  margin-bottom: 0;
+}
