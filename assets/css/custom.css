@@ -962,7 +962,7 @@ section {
 
 .main-content {
   display: grid;
-  grid-template-columns: repeat(2, minmax(320px, 1fr));
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
   gap: 18px;
 }
 
@@ -980,6 +980,11 @@ section {
 #skills {
   grid-column: 1 / -1;
 }
+
+#education {
+  grid-column: 1 / -1;
+}
+
 
 .misc-section ul {
   margin-bottom: 0;
