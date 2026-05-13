@@ -1,21 +1,5 @@
 title: Mukul Sauhta
-logo: /assets/img/headshot.png
-description: ""
-#show_downloads: true
-theme: jekyll-theme-minimal
-include:
-  - assets/css/custom.css
-
-# Additional settings
 markdown: kramdown
 kramdown:
   input: GFM
   syntax_highlighter: rouge
-  parse_block_html: true
-
-# Social links
-github_username: muksaw
-linkedin_username: mukul-sauhta-4b4276234
-email: mukul.sauhta@gmail.com
-location: Raleigh, NC
-
