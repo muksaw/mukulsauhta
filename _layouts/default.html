@@ -23,7 +23,6 @@
         <a href="#" class="nav-link">Home</a>
         <a href="#about" class="nav-link">About Me</a>
         <a href="#education" class="nav-link">Education</a>
-        <a href="#misc" class="nav-link">Misc</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#certifications" class="nav-link">Certifications</a>
         <a href="#projects" class="nav-link">Projects</a>
@@ -33,6 +32,9 @@
 
     <div class="wrapper">
       <header>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle theme" title="Toggle gray/white theme">
+          <i class="fas fa-palette"></i>
+        </button>
         <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
         
         {% if site.logo %}
@@ -98,6 +100,23 @@
 
       // Intersection Observer for scroll animations
       document.addEventListener('DOMContentLoaded', function() {
+        // Theme toggle with persistence
+        const themeToggle = document.getElementById('theme-toggle');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'gray') {
+          document.documentElement.setAttribute('data-theme', 'gray');
+        }
+        themeToggle.addEventListener('click', function() {
+          const isGray = document.documentElement.getAttribute('data-theme') === 'gray';
+          if (isGray) {
+            document.documentElement.removeAttribute('data-theme');
+            localStorage.setItem('theme', 'white');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'gray');
+            localStorage.setItem('theme', 'gray');
+          }
+        });
+
         const sections = document.querySelectorAll('.main-content section');
         
         const observer = new IntersectionObserver((entries) => {
@@ -115,6 +134,25 @@
         sections.forEach(section => {
           observer.observe(section);
         });
+
+        // Dynamic card heights to eliminate whitespace in uneven rows
+        function fitSectionHeights() {
+          const grid = document.querySelector('.main-content');
+          if (!grid || window.innerWidth <= 1100) {
+            sections.forEach(section => section.style.gridRowEnd = '');
+            return;
+          }
+          const rowHeight = parseFloat(getComputedStyle(grid).getPropertyValue('grid-auto-rows'));
+          const rowGap = parseFloat(getComputedStyle(grid).getPropertyValue('gap'));
+          sections.forEach(section => {
+            const span = Math.ceil((section.getBoundingClientRect().height + rowGap) / (rowHeight + rowGap));
+            section.style.gridRowEnd = `span ${span}`;
+          });
+        }
+
+        fitSectionHeights();
+        window.addEventListener('resize', fitSectionHeights);
+        window.addEventListener('load', fitSectionHeights);
       });
     </script>
   </body>
