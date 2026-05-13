@@ -1002,3 +1002,36 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  align-items: stretch;
+}
+
+.education-grid .education-item {
+  margin-bottom: 0;
+  height: 100%;
+}
+
+.experience-section {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.experience-section .job {
+  max-width: 900px;
+  margin: 0 auto 16px auto;
+}
+
+.experience-section .job:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .education-grid {
+    grid-template-columns: 1fr;
+  }
+}
