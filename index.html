@@ -5,9 +5,9 @@ layout: default
 <div class="main-content">
   <section id="about" class="about-section">
     <h1><span class="section-emoji">📝</span>About</h1>
-    <p>I’m a software + data engineer focused on building production-ready systems end to end, from backend services and web apps to scalable data pipelines and analytics workflows.</p>
-    <p>At <strong>Perdis AI</strong>, I built data observability and SCD Type 2 workflows with PySpark and Delta Lake. At <strong>Beesbridge</strong>, I deliver full-stack web solutions and maintain client-facing platforms.</p>
-    <p>I’m currently pursuing an <strong>M.S. in Computer Science at NC State</strong>, with graduate work spanning systems, software engineering, cloud, AI/ML, and security.</p>
+    <p>I build reliable software and data systems that connect product thinking with strong engineering fundamentals—from full-stack applications to production data platforms and analytics workflows.</p>
+    <p>I’ve built data observability and SCD Type 2 workflows with PySpark and Delta Lake, and I’m currently applying those skills alongside my full-stack experience while pursuing my M.S. in Computer Science at NC State, with a focus on software engineering, AI/ML, and data analysis.</p>
+    <p>My goal is to ship work that is practical, scalable, and easy for teams to trust and build on.</p>
   </section>
 
   <section id="education" class="education-section">
@@ -20,12 +20,12 @@ layout: default
         </div>
         <div class="education-content">
           <h3>North Carolina State University - College of Engineering</h3>
-          <p><strong>M.S., Computer Science</strong> (<em>Expected 2027</em>)</p>
+          <p><strong>M.S., Computer Science</strong> (<em>Expected 2026</em>)</p>
           <div class="education-details">
             <p><strong>Graduate Coursework</strong></p>
             <ul>
-              <li><strong>Completed:</strong> CSC 600 (Graduate Orientation), CSC 501 (Operating Systems Principles), CSC 510 (Software Engineering), CSC 547 (Cloud Computing Technology)</li>
-              <li><strong>In Progress:</strong> CSC 520 (Artificial Intelligence), CSC 522 (Automated Learning and Data Analysis), CSC 574 (Computer & Network Security)</li>
+              <li><strong>Completed:</strong> CSC 600 (Graduate Orientation), CSC 501 (Operating Systems Principles), CSC 510 (Software Engineering), CSC 547 (Cloud Computing Technology), CSC 520 (Artificial Intelligence), CSC 522 (Automated Learning and Data Analysis), CSC 574 (Computer & Network Security)</li>
+              <li><strong>In Progress:</strong> CSC 506 Arch Parallel Comp, CSC 570 Computer Networks, CSC 573 Internet Protocols</li>
               <li><strong>Planned:</strong> CSC 503 (Computational Applied Logic)</li>
             </ul>
           </div>
@@ -104,19 +104,11 @@ layout: default
       </div>
     </div>
 
-    <div class="certification-item">
-      <img src="assets/img/databrickslogo.jpeg" alt="Databricks Logo" class="certification-logo">
-      <div class="certification-content">
-        <h3>Databricks Certified Data Engineer Professional</h3>
-        <a href="https://credentials.databricks.com/39305108-7b10-464a-9e49-cf76ae7073fd#acc.oziE5Uf9" target="_blank" class="certification-date certification-date-professional">Issued Jul 2025 · Expires Jul 2027</a>
-
-      </div>
-    </div>
   </section>
 
   <section id="projects" class="projects-section">
     <h2><span class="section-emoji">🚀</span>Projects</h2>
-    <p>Featured projects are shown below. Additional graduate-level projects are listed in a dedicated section further down.</p>
+    <p>I've listed some of my favorite projects below. Additional graduate-level projects are listed in a dedicated section further down.</p>
 
     <div class="project">
       <div class="project-image-container" onclick="openLightbox('assets/img/dataobservability.png')">
@@ -190,6 +182,22 @@ layout: default
   <section id="graduate-projects" class="projects-section graduate-projects-section">
     <h2><span class="section-emoji">🧪</span>Graduate/Classwork Projects</h2>
     <div class="project">
+      <div class="project-image-container" onclick="openLightbox('assets/img/econet.jpg')">
+        <img src="assets/img/econet.jpg" alt="EcoNET QA project" class="project-image">
+        <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
+      </div>
+      <div class="project-content">
+        <h3>EcoNET QA: Weather-Station Anomaly Classification</h3>
+        <ul>
+          <li>Built a feature-engineering pipeline that transformed 6.59M reviewed EcoNET QA rows into model-ready tables by joining flagged observations with station history and metadata.</li>
+          <li>Engineered lag, rolling-window, deviation, cyclic-calendar, and QA-summary features, then evaluated Logistic Regression, Decision Tree, Random Forest, and HistGradientBoosting with time-aware splits.</li>
+          <li>Achieved a best completed validation F1 of 0.869 and PR-AUC of 0.913 on the engineered base feature set.</li>
+          <li><a href="classwork/ACM_Conference_Proceedings_Primary_Article_Template%20(6).pdf" target="_blank">ACM Conference Proceedings (PDF)</a> · <a href="classwork/CSC522%20Final%20Project%20Code.zip" target="_blank">Project Code (ZIP)</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project">
       <div class="project-image-container" onclick="openLightbox('assets/img/linux-logo.svg')">
         <img src="assets/img/linux-logo.svg" alt="Linux logo for CSC 501 projects" class="project-image">
         <div class="expand-icon"><i class="fas fa-expand-alt"></i></div>
@@ -235,6 +243,7 @@ layout: default
 
   <section id="skills" class="skills-section">
     <h2><span class="section-emoji">🛠️</span>Skills</h2>
+    <p>These are some of the skills I’ve developed so far—and I’m always excited to learn new tools quickly when a role or team needs them.</p>
 
     <div class="skill-category">
       <h3 class="skill-category-title">Data Engineering & Analytics</h3>
@@ -244,6 +253,13 @@ layout: default
         <li><div class="skill-bubble">Python</div></li>
         <li><div class="skill-bubble">Delta Lake</div></li>
         <li><div class="skill-bubble">Data Warehousing</div></li>
+        <li><div class="skill-bubble">Data Modeling</div></li>
+        <li><div class="skill-bubble">Feature Engineering</div></li>
+        <li><div class="skill-bubble">scikit-learn</div></li>
+        <li><div class="skill-bubble">Pandas</div></li>
+        <li><div class="skill-bubble">NumPy</div></li>
+        <li><div class="skill-bubble">Matplotlib</div></li>
+        <li><div class="skill-bubble">ETL/ELT Pipelines</div></li>
         <li><div class="skill-bubble">PostgreSQL</div></li>
       </ul>
     </div>
@@ -255,8 +271,13 @@ layout: default
         <li><div class="skill-bubble">C</div></li>
         <li><div class="skill-bubble">C++</div></li>
         <li><div class="skill-bubble">JavaScript</div></li>
+        <li><div class="skill-bubble">TypeScript</div></li>
         <li><div class="skill-bubble">React</div></li>
+        <li><div class="skill-bubble">Node.js</div></li>
         <li><div class="skill-bubble">Django</div></li>
+        <li><div class="skill-bubble">REST APIs</div></li>
+        <li><div class="skill-bubble">Object-Oriented Design</div></li>
+        <li><div class="skill-bubble">Software Testing</div></li>
       </ul>
     </div>
 
@@ -266,6 +287,8 @@ layout: default
         <li><div class="skill-bubble">Linux/Unix</div></li>
         <li><div class="skill-bubble">Git</div></li>
         <li><div class="skill-bubble">Docker</div></li>
+        <li><div class="skill-bubble">Databricks</div></li>
+        <li><div class="skill-bubble">AWS</div></li>
         <li><div class="skill-bubble">Shell Scripting</div></li>
         <li><div class="skill-bubble">GDB</div></li>
         <li><div class="skill-bubble">Valgrind</div></li>
