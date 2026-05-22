@@ -1,1040 +1,375 @@
-/* Basic styling */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #ffffff;
+  --text: #1a202c;
+  --muted: #64748b;
+  --border: #e5e7eb;
+  --accent: #1d4ed8;
+  --hover-bg: #f9fafb;
+  --tag-bg: #f3f4f6;
+  --card-bg: #fafafa;
+  --font: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+  --max-width: 700px;
+}
+
+html { scroll-behavior: smooth; }
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  font-size: 16px;
 }
 
-/* Improve layout */
-.wrapper {
-  max-width: 960px;
-  margin-top: 70px;
-  scroll-margin-top: 70px;
-  scroll-behavior: smooth;
-}
-
-/* Style headings */
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  margin-top: 20px;
-  margin-bottom: 16px;
-}
-
-h2 {
-  padding-top: 10px;
-  padding-bottom: 8px;
-  border-bottom: none;
-  margin-top: 25px;
-  scroll-margin-top: 70px;
-}
-
-/* Style links */
-a {
-  color: #0066cc;
-  text-decoration: none;
-  font-weight: inherit;
-}
-
-a:hover {
-  color: #004080;
-  text-decoration: none;
-}
-
-/* Style the sidebar */
-.sidebar-contact {
-  margin-top: 20px;
-}
-
-.sidebar-contact a,
-.sidebar-contact p {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  color: #555;
-  text-decoration: none;
-  font-size: 0.95em;
-}
-
-.sidebar-contact i {
-  width: 20px;
-  margin-right: 10px;
-  text-align: center;
-}
-
-.contact-heading {
-  margin-top: 30px;
-  margin-bottom: 10px;
-  font-size: 1.2em;
-  color: #333;
-  font-weight: 600;
-}
-
-.location {
-  margin-top: 20px;
-  font-size: 0.95em;
-  color: #555;
-}
-
-/* Hide GitHub elements */
-.view-on-github, 
-footer p:first-of-type,
-footer p:nth-of-type(2) {
-  display: none !important;
-}
-
-/* Footer styling */
-footer p:last-of-type {
-  text-align: right;
-  font-size: 0.8em;
-  color: #999;
-  margin-top: 30px;
-}
-
-/* Mobile responsiveness */
-@media print, screen and (max-width: 960px) {
-  header, section {
-    float: none;
-    position: static;
-    width: auto;
-    margin: 0;
-  }
-  
-  header {
-    padding: 20px 0;
-  }
-}
-
-
-
-/* Remove border from the last section */
-.certifications-section {
-  border-bottom: none;
-  padding-bottom: 25px;
-  margin-bottom: 25px;
-}
-
-/* Project styling - match education exactly */
-.project {
-  display: flex;
-  gap: 25px;
-  margin-bottom: 20px;
-  align-items: center;
-  position: relative;
-  border-radius: 8px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  transform: translateY(0); /* Explicitly set initial state */
-  will-change: transform, box-shadow; /* Optimize for animation */
-}
-
-.project-image-container {
-  position: relative;
-  cursor: pointer;
-}
-
-.project-image {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-  flex-shrink: 0;
-  background-color: #f5f5f5;
-  padding: 12px;
-  border-radius: 8px;
-  transition: transform 0.2s ease;
-}
-
-.expand-icon {
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  background-color: rgba(255, 255, 255, 0.8);
-  color: #333;
-  border-radius: 50%;
-  width: 20px;
-  height: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  pointer-events: none;
-}
-
-.project-content {
-  flex: 1;
-}
-
-.project-content h3 {
-  margin-top: 0;
-  margin-bottom: 12px;
-  font-size: 1.2em;
-}
-
-/* Reset and style the bullet points */
-.project ul {
-  padding-left: 20px;
-  margin: 0;
-}
-
-.project li {
-  list-style: disc;
-  margin-bottom: 8px;
-}
-
-/* Remove the previous bullet point image styling */
-.project-bullet {
-  display: block;
-}
-
-.bullet-image {
-  display: none;
-}
-
-/* Remove any previous section dividers */
-.education-section:before, 
-.experience-section:before, 
-.projects-section:before, 
-.skills-section:before, 
-.certifications-section:before {
-  content: none;
-}
-
-/* Skills section styling */
-.skills-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.skill-item {
-  background-color: #f5f5f5;
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.9em;
-}
-
-/* Contact section styling */
-.contact-links {
-  display: flex;
-  gap: 15px;
-}
-
-.contact-links a {
-  display: inline-flex;
-  align-items: center;
-}
-
-.contact-links a:before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 5px;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Add university style */
-.university {
-  margin-top: 5px;
-  font-size: 0.95em;
-  color: #555;
-}
-
-/* Add bio style */
-.bio {
-  margin-top: 15px;
-  font-size: 0.95em;
-  color: #555;
-  line-height: 1.4;
-}
-
-/* Section styling */
-section {
-  margin-bottom: 20px;
-}
-
-/* Heading styling */
-h1, h2, h3, h4, h5, h6 {
-  color: #333;
-  font-weight: 600;
-}
-
-h4 {
-  font-size: 1.1em;
-}
-
-/* Adjust paragraph spacing */
-p {
-  margin-bottom: 12px;
-}
-
-/* Add subtle visual separation between major sections */
-.education-section, 
-.experience-section, 
-.projects-section, 
-.skills-section, 
-.certifications-section {
-  position: relative;
-  padding-bottom: 10px;
-}
-
-/* Add a subtle bottom border to create visual separation */
-.education-section:after, 
-.experience-section:after, 
-.projects-section:after, 
-.skills-section:after {
-  content: "";
-  display: block;
-  height: 1px;
-  background: linear-gradient(to right, rgba(0,0,0,0.05), rgba(0,0,0,0.1), rgba(0,0,0,0.05));
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-
-/* Top navigation styling */
-.top-nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  z-index: 1000;
-  height: 50px;
-  display: flex;
-  align-items: center;
-}
-
-.nav-container {
-  width: 100%;
-  max-width: 1200px;
+/* ── Site shell ── */
+.site {
+  max-width: var(--max-width);
   margin: 0 auto;
-  padding: 0 20px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+  padding: 64px 24px 48px;
 }
 
-.nav-link {
-  padding: 8px 15px;
-  color: #2c3e50;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95em;
-  position: relative;
+/* ── Header ── */
+.site-header {
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--border);
 }
 
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #2c3e50;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
+.site-name {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
 }
 
-.nav-link:hover {
-  color: #2c3e50;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.nav-link:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Mobile responsiveness for navigation */
-@media screen and (max-width: 768px) {
-  .nav-container {
-    justify-content: flex-start;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    padding: 0 10px;
-  }
-  
-  .nav-link {
-    padding: 8px 12px;
-    white-space: nowrap;
-  }
-  
-  .wrapper {
-    margin-top: 60px;
-  }
-}
-
-/* Remove the previous nav-menu styles */
-.nav-menu {
-  display: none;
-}
-
-/* Add some padding to section headings for the anchor links */
-h2 {
-  padding-top: 10px;
-  scroll-margin-top: 70px; /* This helps with the sticky nav when scrolling to anchors */
-}
-
-/* Emoji styling for section headings */
-.section-emoji {
-  margin-right: 10px;
-  font-size: 1.2em;
-}
-
-/* Ensure the page starts at the top */
-html {
-  scroll-behavior: smooth;
-  overflow-y: scroll;
-}
-
-/* Project title and link styling */
-.project h3 {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: #333; /* Make all project titles the same color */
-}
-
-.project h3 a {
-  color: inherit; /* Inherit the color from the h3 */
-  text-decoration: none;
-}
-
-.project h3 a:hover {
+.site-name a {
   color: inherit;
   text-decoration: none;
 }
 
-.external-link-icon {
-  color: #3498db;
-  font-size: 0.8em;
-  transition: transform 0.2s ease;
+.site-name a:hover { color: var(--accent); }
+
+.site-tagline {
+  color: var(--muted);
+  font-size: 0.95rem;
+  margin-bottom: 18px;
 }
 
-.external-link-icon:hover {
-  transform: scale(1.1);
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 22px;
+  font-size: 0.875rem;
 }
 
-/* About section link styling */
-.about-section a,
-.certifications-section a {
-  color: #0066cc;
+.contact-links a,
+.contact-links .location {
+  color: var(--muted);
   text-decoration: none;
-  font-weight: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.15s;
 }
 
-.about-section a:hover,
-.certifications-section a:hover {
-  color: #004080;
+.contact-links a:hover { color: var(--accent); }
+
+/* ── Accordion ── */
+.accordion-section {
+  border-bottom: 1px solid var(--border);
+}
+
+.section-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: left;
+  letter-spacing: 0.01em;
+  transition: color 0.15s;
+  gap: 12px;
+}
+
+.section-toggle:hover { color: var(--accent); }
+
+.toggle-icon {
+  font-size: 0.7rem;
+  color: var(--muted);
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+}
+
+.accordion-section.open .toggle-icon {
+  transform: rotate(180deg);
+}
+
+.section-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.section-inner {
+  padding: 4px 0 28px;
+}
+
+/* ── Typography inside sections ── */
+p { margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+ul {
+  padding-left: 18px;
+  margin-bottom: 10px;
+}
+ul:last-child { margin-bottom: 0; }
+
+li { margin-bottom: 4px; }
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 600; }
+
+/* ── Education ── */
+.education-item {
+  padding: 16px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.education-item:last-child { margin-bottom: 0; }
+
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.edu-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.edu-title {
+  font-weight: 600;
+  font-size: 0.925rem;
+  line-height: 1.4;
+}
+
+.edu-degree {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-top: 2px;
+}
+
+.education-item p {
+  font-size: 0.875rem;
+  color: #374151;
+  margin-bottom: 6px;
+}
+
+/* ── Experience ── */
+.job {
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 24px;
+}
+.job:last-child { margin-bottom: 0; }
+
+.job-title {
+  font-weight: 600;
+  font-size: 0.925rem;
+  margin-bottom: 2px;
+}
+
+.job-meta {
+  color: var(--muted);
+  font-size: 0.825rem;
+  margin-bottom: 8px;
+}
+
+.job ul { font-size: 0.875rem; }
+
+/* ── Certifications ── */
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.cert-item:first-child { padding-top: 0; }
+.cert-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.cert-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.cert-name {
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.cert-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 10px;
+  font-size: 0.78rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+.cert-badge:hover {
+  color: var(--accent);
+  border-color: var(--accent);
   text-decoration: none;
 }
 
-/* Section spacing */
-.about-section {
-  margin-bottom: 0px; /* Reduced from 20px */
+/* ── Projects ── */
+.project-item {
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+}
+.project-item:first-child { padding-top: 0; }
+.project-item:last-child { border-bottom: none; padding-bottom: 0; }
+
+.project-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
 }
 
-.education-section {
-  margin-top: 10px; /* Reduced from 25px */
-  padding-top: 0; /* Remove top padding */
+.project-img {
+  width: 44px;
+  height: 44px;
+  object-fit: contain;
+  flex-shrink: 0;
+  cursor: pointer;
+  background: var(--tag-bg);
+  padding: 8px;
+  border-radius: 6px;
+  transition: opacity 0.2s;
+}
+.project-img:hover { opacity: 0.7; }
+
+.project-title {
+  font-weight: 600;
+  font-size: 0.925rem;
+  line-height: 1.4;
 }
 
-/* Adjust heading spacing */
-.education-section h2 {
-  margin-top: 5px; /* Reduced from 25px */
-  padding-top: 5px; /* Reduced from 10px */
+.project-title a {
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.project-title a:hover { color: var(--accent); text-decoration: none; }
+
+.project-item ul { font-size: 0.875rem; }
+
+.project-item .classwork-link {
+  font-size: 0.825rem;
+  margin-top: 6px;
 }
 
-/* Lightbox styling */
-.lightbox-container {
+/* ── Skills ── */
+.skill-category {
+  margin-bottom: 20px;
+}
+.skill-category:last-child { margin-bottom: 0; }
+
+.skill-category-title {
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+}
+
+.skill-tag {
+  padding: 4px 12px;
+  background: var(--tag-bg);
+  border-radius: 20px;
+  font-size: 0.825rem;
+  color: #374151;
+}
+
+/* ── Footer ── */
+.site-footer {
+  margin-top: 48px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* ── Lightbox ── */
+.lightbox {
   display: none;
   position: fixed;
-  z-index: 1100;
-  left: 0;
-  top: 0;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  justify-content: center;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  z-index: 999;
   align-items: center;
+  justify-content: center;
 }
 
-.lightbox-content {
-  max-width: 80%;
-  max-height: 80%;
-}
-
-.lightbox-image {
-  width: 100%;
-  height: auto;
-  max-height: 80vh;
+.lightbox img {
+  max-width: 88vw;
+  max-height: 84vh;
   object-fit: contain;
   border-radius: 4px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .lightbox-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
-  color: white;
-  font-size: 30px;
+  top: 18px;
+  right: 24px;
+  color: #fff;
+  font-size: 26px;
   cursor: pointer;
-  transition: color 0.2s;
-}
-
-.lightbox-close:hover {
-  color: #3498db;
-}
-
-/* Add spacing after projects intro paragraph */
-.projects-section > p {
-  margin-bottom: 25px; /* Increased from default */
-}
-
-/* Animation keyframes */
-@keyframes fadeInSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Profile section animations */
-header img {
-  opacity: 0;
-  animation: fadeInSlideUp 0.8s ease-out forwards;
-}
-
-.sidebar-contact {
-  opacity: 0;
-  animation: fadeInSlideUp 0.8s ease-out 0.3s forwards;
-}
-
-/* Content section animations */
-.main-content section {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.main-content section.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Ensure sections are visible if JavaScript is disabled */
-.no-js .main-content section {
-  opacity: 1;
-  transform: none;
-}
-
-/* Hover effect for sections and projects */
-.about-section,
-.education-section,
-.experience-section,
-.skills-section,
-.certifications-section,
-.project {
-  position: relative;
-  border-radius: 8px;
-  padding: 15px;
-  margin: -15px;  /* Offset padding to maintain layout */
-  transition: background-color 0.3s ease;
-}
-
-/* Create a new, clean transition */
-.project {
-  transition-property: transform, box-shadow;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-  transition-delay: 0s;
-}
-
-/* Clean hover effect */
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-/* Ensure image hover doesn't conflict */
-.project-image {
-  transition: transform 0.2s ease;
-}
-
-.project-image-container:hover .project-image {
-  transform: scale(1.05);
-}
-
-/* Remove any other transforms that might interfere */
-.project:hover .project-image-container {
-  transform: none;
-}
-
-/* Maintain section dividers visibility */
-.education-section:after, 
-.experience-section:after, 
-.projects-section:after, 
-.skills-section:after {
-  z-index: 1;  /* Ensure divider stays visible */
-}
-
-/* Common link animation styles for content links */
-.about-section a,
-.certifications-section a {
-  position: relative;
-  color: #0066cc; /* Keep links blue to identify them */
-  text-decoration: none;
-  font-weight: inherit;
-}
-
-/* Separate styling for header name link */
-header h1 a {
-  position: relative;
-  color: inherit;
-  text-decoration: none;
-  font-weight: inherit;
-}
-
-/* Animated underline effect for content links and header */
-.about-section a::after,
-.certifications-section a::after,
-header h1 a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 100%;
-  height: 1px;
-  background-color: #3498db;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-/* Contact section specific styling */
-.sidebar-contact a {
-  position: relative;
-  color: #555;
-  text-decoration: none;
-  font-weight: inherit;
-  display: inline-flex;
-  align-items: center;
-}
-
-/* Animated underline for contact links */
-.sidebar-contact a::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 25px; /* Adjust to account for icon width */
-  width: calc(100% - 25px); /* Adjust width to not include icon */
-  height: 1px;
-  background-color: #3498db;
-  transform: scaleX(0);
-  transform-origin: right;
-  transition: transform 0.3s ease;
-}
-
-/* Hover effects */
-.about-section a:hover::after,
-.certifications-section a:hover::after,
-.sidebar-contact a:hover::after,
-header h1 a:hover::after {
-  transform: scaleX(1);
-  transform-origin: left;
-}
-
-/* Override hover color for content links */
-.about-section a:hover,
-.certifications-section a:hover {
-  color: #004080;
-}
-
-/* Keep contact links and header name color consistent on hover */
-.sidebar-contact a:hover,
-header h1 a:hover {
-  color: inherit;
-}
-
-/* Ensure icons in sidebar maintain proper spacing */
-.sidebar-contact i {
-  width: 20px;
-  margin-right: 10px;
-  position: relative;
-  z-index: 2;
-}
-
-/* Remove the negative margins that were causing overlap */
-.projects-section > .project {
-  margin: 0 0 20px 0;
-}
-
-.projects-section > .project:last-child {
-  margin-bottom: 0;
-}
-
-/* Education section common styling */
-.education-item {
-  margin-bottom: 30px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.education-content-wrapper {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  justify-content: space-between; /* This helps push the image to the right */
-}
-
-.education-image-container {
-  flex-shrink: 0;
-  order: 2; /* This moves the image to the right */
-}
-
-.education-image {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-  background-color: #fff; /* Changed to white since background is already gray */
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.education-content {
-  flex: 1;
-  order: 1; /* This ensures content stays on the left */
-}
-
-/* Future education styling - remove background since it's now common */
-.future-education {
-  margin-bottom: 30px;
-}
-
-.future-education h3 {
-  color: #2c3e50;
-  margin-bottom: 10px;
-}
-
-.status-text {
-  color: #666;
-  font-style: italic;
-  margin-top: 5px;
-}
-
-/* Education details styling */
-.education-details {
-  margin-top: 15px;
-}
-
-.education-details p {
-  margin-bottom: 5px;
-}
-
-.education-details ul {
-  margin: 0 0 15px 20px;
-}
-
-.coursework-text {
-  margin: 5px 0;
-  color: #555;
-}
-
-/* Skills section restyling */
-.skills-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.skills-section li {
-  margin: 0;
-  padding: 0;
-}
-
-.skill-category {
-  margin-bottom: 20px;
-}
-
-.skill-category-title {
-  margin-bottom: 12px;
-  color: #2c3e50;
-  font-weight: 600;
-}
-
-.skill-bubble {
-  display: inline-block;
-  padding: 8px 16px;
-  background-color: #f8f9fa;
-  border: 1px solid #e9ecef;
-  border-radius: 20px;
-  color: #495057;
-  font-size: 0.95em;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.skill-bubble:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  background-color: #fff;
-}
-
-/* Certification styling */
-.certification-item {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  margin-bottom: 25px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 2px solid transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.certification-item:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-.certification-logo {
-  width: 45px;  /* Reduced size */
-  height: 45px;  /* Reduced size */
-  object-fit: contain;
-  border-radius: 4px;
-  flex-shrink: 0;
-}
-
-.certification-content {
-  flex: 1;
-}
-
-.certification-content h3 {
-  margin: 0 0 8px 0;
-  font-size: 1.1em;
-  color: #2c3e50;
-}
-
-.certification-date {
-  display: inline-block;
-  padding: 6px 12px;
-  background-color: #f0f0f0;
-  border-radius: 15px;
-  color: #666;
-  font-size: 0.9em;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.certification-date:hover {
-  background-color: #e0e0e0;
-  color: #444;
-  text-decoration: none;
-}
-
-.certification-date-associate {
-  border: 2px solid #c0c0c0;
-}
-
-.certification-date-professional {
-  border: 2px solid #d4af37;
-}
-
-
-.certification-item-associate {
-  border-color: #c0c0c0;
-  box-shadow: inset 0 0 0 1px rgba(192, 192, 192, 0.25);
-}
-
-.certification-item-professional {
-  border-color: #d4af37;
-  box-shadow: inset 0 0 0 1px rgba(212, 175, 55, 0.25);
-}
-
-
-  
-/* Compact, recruiter-first layout updates */
-.main-content {
-  display: grid;
-  gap: 14px;
-}
-
-.main-content section {
-  margin-bottom: 8px;
-}
-
-.about-section p {
-  margin-bottom: 8px;
-}
-
-.compact-card {
-  background: #f8f9fa;
-  border-radius: 8px;
-  padding: 14px 16px;
-  margin-bottom: 12px;
-}
-
-.compact-card p {
-  margin-bottom: 6px;
-}
-
-.compact-card ul {
-  margin: 0 0 0 18px;
-}
-
-/* tighten image-heavy project cards slightly */
-.project {
-  margin-bottom: 14px;
-  padding: 16px;
-}
-
-@media screen and (max-width: 768px) {
-  .project {
-    gap: 14px;
-    padding: 12px;
-  }
-
-  .project-image {
-    width: 64px;
-    height: 64px;
-    padding: 8px;
-  }
-}
-
-/* Layout refresh: break out of default Jekyll split layout while keeping style language */
-.wrapper {
-  max-width: 1360px;
-  width: min(95vw, 1360px);
-  margin-left: auto;
-  margin-right: auto;
-  display: grid;
-  grid-template-columns: 290px minmax(0, 1fr);
-  gap: 26px;
-  align-items: start;
-}
-
-header {
-  position: sticky;
-  top: 78px;
-  float: none;
-  width: auto;
-  padding: 22px;
-  border-radius: 14px;
-  background: #ffffff;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
-}
-
-section {
-  float: none;
-  width: auto;
-}
-
-.main-content {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
-  gap: 18px;
-}
-
-.main-content > section {
-  margin: 0;
-  padding: 18px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-}
-
-#about,
-#projects,
-#graduate-projects,
-#skills {
-  grid-column: 1 / -1;
-}
-
-#education {
-  grid-column: 1 / -1;
-}
-
-
-.misc-section ul {
-  margin-bottom: 0;
-}
-
-footer {
-  grid-column: 1 / -1;
-}
-
-@media screen and (max-width: 1100px) {
-  .wrapper {
-    grid-template-columns: 1fr;
-  }
-
-  header {
-    position: static;
-  }
-
-  .main-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-.education-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 20px;
-  align-items: start;
-}
-
-.education-grid .education-item {
-  margin-bottom: 0;
-}
-
-.experience-section {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.experience-section .job {
-  max-width: 900px;
-  margin: 0 auto 16px auto;
-}
-
-.experience-section .job:last-child {
-  margin-bottom: 0;
-}
-
-@media screen and (max-width: 900px) {
-  .education-grid {
-    grid-template-columns: 1fr;
-  }
+  opacity: 0.75;
+  line-height: 1;
+  user-select: none;
+}
+.lightbox-close:hover { opacity: 1; }
+
+/* ── Mobile ── */
+@media (max-width: 560px) {
+  .site { padding: 40px 16px 36px; }
+  .site-name { font-size: 1.6rem; }
+  .contact-links { gap: 8px 16px; }
 }

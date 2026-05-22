@@ -1,120 +1,96 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: "en-US" }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Update the title -->
-    <title>Mukul's Portfolio</title>
-    
-    <!-- Add favicon -->
-    <link rel="icon" type="image/png" href="{{ "/assets/img/favicon-32x32.png" | relative_url }}">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
-    <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
-    {% include head-custom.html %}
-  </head>
-  <body>
-    <!-- Add the navigation menu at the top level -->
-    <nav class="top-nav">
-      <div class="nav-container">
-        <a href="#" class="nav-link">Home</a>
-        <a href="#about" class="nav-link">About Me</a>
-        <a href="#education" class="nav-link">Education</a>
-        <a href="#experience" class="nav-link">Experience</a>
-        <a href="#certifications" class="nav-link">Certifications</a>
-        <a href="#projects" class="nav-link">Projects</a>
-        <a href="#skills" class="nav-link">Skills</a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mukul Sauhta</title>
+  <link rel="icon" type="image/png" href="/assets/img/favicon-32x32.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="{{ "/assets/css/custom.css" | relative_url }}">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <h1 class="site-name"><a href="/">Mukul Sauhta</a></h1>
+      <p class="site-tagline">Software &amp; Data Engineer &middot; M.S. CS @ NC State</p>
+      <div class="contact-links">
+        <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a>
+        <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <span class="location"><i class="fas fa-map-marker-alt"></i> Raleigh, NC</span>
       </div>
-    </nav>
+    </header>
 
-    <div class="wrapper">
-      <header>
-        <h1><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a></h1>
-        
-        {% if site.logo %}
-          <img src="{{site.logo | relative_url}}" alt="Logo" />
-        {% endif %}
-
-        <div class="sidebar-contact">          
-          <p class="location"><i class="fas fa-map-marker-alt"></i> Charlotte, NC</p>
-          
-          <h3 class="contact-heading">Contact Me</h3>
-          
-          <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a>
-          <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}"><i class="fab fa-linkedin"></i> LinkedIn</a>
-          <a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i> GitHub</a>
-        </div>
-      </header>
-      <section>
-
+    <main class="site-content">
       {{ content }}
+    </main>
 
-      </section>
-      <footer>
-        <p>Hosted on GitHub Pages. Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
-      </footer>
-    </div>
-    <div class="lightbox-container" id="lightbox">
-      <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
-      <div class="lightbox-content">
-        <img class="lightbox-image" id="lightbox-img" src="" alt="Expanded project image">
-      </div>
-    </div>
-    <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
-    <script>
-      // Lightbox functionality
-      function openLightbox(imgSrc) {
-        document.getElementById('lightbox-img').src = imgSrc;
-        document.getElementById('lightbox').style.display = 'flex';
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
-      }
-      
-      function closeLightbox() {
-        document.getElementById('lightbox').style.display = 'none';
-        document.body.style.overflow = 'auto'; // Re-enable scrolling
-      }
-      
-      // Close lightbox when clicking outside the image
-      document.getElementById('lightbox').addEventListener('click', function(e) {
-        if (e.target !== document.getElementById('lightbox-img')) {
-          closeLightbox();
-        }
-      });
-      
-      // Close lightbox with Escape key
-      document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape') {
-          closeLightbox();
-        }
-      });
-      
-      window.onload = function() {
-        window.scrollTo(0, 0);
-      }
+    <footer class="site-footer">
+      <p>Hosted on GitHub Pages</p>
+    </footer>
+  </div>
 
-      // Intersection Observer for scroll animations
-      document.addEventListener('DOMContentLoaded', function() {
-        const sections = document.querySelectorAll('.main-content section');
-        
-        const observer = new IntersectionObserver((entries) => {
-          entries.forEach(entry => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('visible');
-              observer.unobserve(entry.target); // Stop observing once visible
-            }
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="Project image">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var sections = document.querySelectorAll('.accordion-section');
+
+      sections.forEach(function (section) {
+        var body = section.querySelector('.section-body');
+        body.style.maxHeight = '0';
+
+        section.querySelector('.section-toggle').addEventListener('click', function () {
+          var isOpen = section.classList.contains('open');
+
+          // Close all sections
+          sections.forEach(function (s) {
+            s.classList.remove('open');
+            s.querySelector('.section-body').style.maxHeight = '0';
+            s.querySelector('.section-toggle').setAttribute('aria-expanded', 'false');
           });
-        }, {
-          threshold: 0.15, // Trigger when 15% of the element is visible
-          rootMargin: '0px 0px -50px 0px' // Slightly offset the trigger point
-        });
-        
-        sections.forEach(section => {
-          observer.observe(section);
+
+          // Open this one if it was closed
+          if (!isOpen) {
+            section.classList.add('open');
+            body.style.maxHeight = body.scrollHeight + 'px';
+            section.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
+          }
         });
       });
-    </script>
-  </body>
-</html> 
+
+      // Open About by default
+      var about = document.getElementById('about');
+      if (about) {
+        about.classList.add('open');
+        var aboutBody = about.querySelector('.section-body');
+        aboutBody.style.maxHeight = aboutBody.scrollHeight + 'px';
+        about.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
+      }
+
+      // Lightbox background click
+      document.getElementById('lightbox').addEventListener('click', function (e) {
+        if (e.target !== document.getElementById('lightbox-img')) closeLightbox();
+      });
+    });
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
+</body>
+</html>
