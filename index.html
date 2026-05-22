@@ -2,24 +2,29 @@
 layout: default
 ---
 
-<section class="about-section">
-  <p>I'm a software and data engineer finishing my M.S. in Computer Science at NC State. I like building things with real constraints — pipelines that need to process millions of records reliably, applications that need to load fast, systems that other engineers can trust and extend.</p>
-  <p>Most of my recent work has been in data infrastructure: I built an observability library at Perdis AI that brought dataset ingestion from <strong>10 minutes to 10 seconds</strong>, shipped SCD Type 2 pipelines over millions of records with Delta Lake, and led backend development on a SAS-sponsored senior design project that governed <strong>5,000+ enterprise data entries</strong>. I hold four Databricks certifications and spend a lot of time in PySpark and Python, though I'm equally comfortable on the full-stack side.</p>
-  <p>Outside of work I'm usually on a trail somewhere — hiking around the Triangle, exploring state parks, or finding longer routes when I have the time. I also swim, read across a wide range of topics, and have an ambitious gaming backlog I'm slowly making progress on.</p>
+<div class="nav-row">
+  <button class="back-btn" id="back-btn" aria-label="Back to about">
+    <i class="fas fa-arrow-left"></i>
+  </button>
+  <nav class="tab-nav" aria-label="Sections">
+    <button class="tab-btn" data-tab="education">Education</button>
+    <button class="tab-btn" data-tab="experience">Experience</button>
+    <button class="tab-btn" data-tab="certifications">Certifications</button>
+    <button class="tab-btn" data-tab="projects">Projects</button>
+    <button class="tab-btn" data-tab="skills">Skills</button>
+  </nav>
+</div>
+
+<section class="about-section" id="about-section">
+  <p>I'm a software and data engineer finishing my M.S. in Computer Science at NC State. I like building things with real constraints: pipelines that process millions of records, applications that load fast, systems other engineers can trust and extend.</p>
+  <p>Most of my recent work has been in data infrastructure. I built an observability library at Perdis AI that brought dataset ingestion from <strong>10 minutes to 10 seconds</strong>, shipped SCD Type 2 pipelines over millions of records with Delta Lake, and led backend development on a SAS-sponsored senior design project governing <strong>5,000+ enterprise data entries</strong>. I hold four Databricks certifications and spend most of my time in PySpark and Python, though I'm equally comfortable on the full-stack side.</p>
+  <p>Outside of work I'm usually on a trail. I hike around the Carolinas regularly and try to get to new state parks whenever I can. I read a lot, mostly Sci-Fi, history, and philosophical fiction. Dostoevsky is a personal favorite, but my shelf ranges from Roman history to Harry Potter and The Boys in the Boat. I'm also a competitive gamer and put in real work to reach the upper tier of the CS2 ranked ladder in North America.</p>
 </section>
 
-<nav class="tab-nav" aria-label="Sections">
-  <button class="tab-btn active" data-tab="education">Education</button>
-  <button class="tab-btn" data-tab="experience">Experience</button>
-  <button class="tab-btn" data-tab="certifications">Certifications</button>
-  <button class="tab-btn" data-tab="projects">Projects</button>
-  <button class="tab-btn" data-tab="skills">Skills</button>
-</nav>
-
-<div class="tab-panels">
+<div class="tab-panels" id="tab-panels" style="display:none">
 
   <!-- ── Education ──────────────────────────────────────────────────── -->
-  <div class="tab-panel active" id="tab-education">
+  <div class="tab-panel" id="tab-education">
     <div class="education-item">
       <div class="edu-header">
         <img src="{{ "/assets/img/ncsu-engr.png" | relative_url }}" alt="NCSU" class="edu-logo">
@@ -101,196 +106,159 @@ layout: default
   <!-- ── Projects ───────────────────────────────────────────────────── -->
   <div class="tab-panel" id="tab-projects">
     <p class="section-note">A selection of projects &mdash; see <a href="https://github.com/muksaw" target="_blank">GitHub</a> for more.</p>
-    <div class="projects-grid">
 
-      <div class="project-pill" id="proj-sas">
-        <button class="pill-header" type="button" aria-expanded="false">
-          SAS Curator's Compass <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content"><div class="proj-details">
+    <nav class="proj-tab-nav" aria-label="Projects">
+      <button class="proj-tab-btn active" data-proj="sas">SAS Curator's Compass</button>
+      <button class="proj-tab-btn" data-proj="obs">Data Observability</button>
+      <button class="proj-tab-btn" data-proj="scd">SCD Type 2</button>
+      <button class="proj-tab-btn" data-proj="beesbridge">Beesbridge</button>
+      <button class="proj-tab-btn" data-proj="ncsuhealth">NCSUHealth</button>
+    </nav>
+
+    <div class="proj-group-label">Graduate Work</div>
+    <nav class="proj-tab-nav proj-tab-nav-last" aria-label="Graduate projects">
+      <button class="proj-tab-btn" data-proj="econet">EcoNET QA</button>
+      <button class="proj-tab-btn" data-proj="pokemon">Pok&eacute;mon Mining</button>
+      <button class="proj-tab-btn" data-proj="os">OS Projects</button>
+      <button class="proj-tab-btn" data-proj="aes">AES Encryption</button>
+      <button class="proj-tab-btn" data-proj="foodseer">Food Seer</button>
+    </nav>
+
+    <div class="proj-panels">
+
+      <div class="proj-panel active" id="proj-panel-sas">
+        <div class="proj-content"><div class="proj-details">
+          <ul>
+            <li>SAS-sponsored senior design project (team of 5): built a governed catalog for enterprise data assets with 5+ blueprint templates for standardizing data products.</li>
+            <li>Metadata-driven identification workflow over <strong>5,000+ entries</strong> &mdash; <strong>90% auto-suggestion accuracy</strong>, <strong>80% reduction</strong> in manual curation time.</li>
+            <li>Full-stack system with role-based access, schema-enforced metadata forms, and auditable review pipeline.</li>
+          </ul>
+          <p class="proj-tech">React &middot; Django &middot; PostgreSQL &middot; Docker</p>
+        </div></div>
+      </div>
+
+      <div class="proj-panel" id="proj-panel-obs">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/dataobservability.png" | relative_url }}" alt="Data Observability" class="proj-img" onclick="openLightbox('{{ "/assets/img/dataobservability.png" | relative_url }}')">
+          <div class="proj-details">
             <ul>
-              <li>SAS-sponsored senior design project (team of 5): built a governed catalog for enterprise data assets with 5+ blueprint templates for standardizing data products.</li>
-              <li>Metadata-driven identification workflow over <strong>5,000+ entries</strong> &mdash; <strong>90% auto-suggestion accuracy</strong>, <strong>80% reduction</strong> in manual curation time.</li>
-              <li>Full-stack system with role-based access, schema-enforced metadata forms, and auditable review pipeline.</li>
+              <li>Python/PySpark observability library tracking <strong>15+ statistical metrics</strong> per column including drift detection across large datasets.</li>
+              <li>Reduced ingestion and reformatting time from <strong>10 minutes to 10 seconds</strong> (60&times; speedup) via optimized incremental transformations.</li>
+              <li>Produced dashboard-ready outputs for downstream anomaly detection and reliability monitoring.</li>
             </ul>
-            <p class="proj-tech">React &middot; Django &middot; PostgreSQL &middot; Docker</p>
-          </div></div>
-        </div></div>
-      </div>
-
-      <div class="project-pill" id="proj-obs">
-        <button class="pill-header" type="button" aria-expanded="false">
-          Data Observability Tool <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/dataobservability.png" | relative_url }}" alt="Data Observability" class="proj-img" onclick="openLightbox('{{ "/assets/img/dataobservability.png" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Python/PySpark observability library that profiles, compares, and reformats large datasets incrementally — tracking <strong>15+ statistical metrics</strong> per column including drift detection.</li>
-                <li>Reduced dataset ingestion and reformatting time from <strong>10 minutes to 10 seconds</strong> (60&times; speedup) via optimized incremental transformations.</li>
-                <li>Produced dashboard-ready statistical outputs for downstream anomaly detection and reliability monitoring.</li>
-              </ul>
-              <p class="proj-tech">Python &middot; PySpark &middot; Delta Lake &middot; Databricks</p>
-            </div>
+            <p class="proj-tech">Python &middot; PySpark &middot; Delta Lake &middot; Databricks</p>
           </div>
-        </div></div>
+        </div>
       </div>
 
-      <div class="project-pill" id="proj-scd">
-        <button class="pill-header" type="button" aria-expanded="false">
-          SCD Type 2 Pipeline <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/scdtype2.png" | relative_url }}" alt="SCD Type 2" class="proj-img" onclick="openLightbox('{{ "/assets/img/scdtype2.png" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Implemented SCD Type 2 patterns with Delta Lake, SQL, and PySpark to preserve full historical dimensional data across millions of records.</li>
-                <li>Enabled auditable versioned records with effective date tracking for downstream analytics, BI reporting, and compliance workflows.</li>
-              </ul>
-              <p class="proj-tech">PySpark &middot; Delta Lake &middot; SQL &middot; Databricks</p>
-            </div>
-          </div>
-        </div></div>
-      </div>
-
-      <div class="project-pill" id="proj-beesbridge">
-        <button class="pill-header" type="button" aria-expanded="false">
-          Beesbridge LLC Website <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/beesbridge.jpeg" | relative_url }}" alt="Beesbridge" class="proj-img" onclick="openLightbox('{{ "/assets/img/beesbridge.jpeg" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Rebuilt from WordPress/Elementor into a React static stack &mdash; <strong>GTmetrix Grade A</strong>, 99% performance, 98% structure.</li>
-                <li>Cut payload to <strong>100 KB</strong> and network requests to <strong>5</strong>; supports 150+ client case studies and enterprise service offerings.</li>
-              </ul>
-              <p class="proj-tech">React &middot; HTML/CSS &middot; JavaScript</p>
-              <p class="proj-links"><a href="https://beesbridge.us/" target="_blank">Live Site &#8599;</a></p>
-            </div>
-          </div>
-        </div></div>
-      </div>
-
-      <div class="project-pill" id="proj-ncsuhealth">
-        <button class="pill-header" type="button" aria-expanded="false">
-          NCSUHealth <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/ncsuhealth-logo.png" | relative_url }}" alt="NCSUHealth" class="proj-img" onclick="openLightbox('{{ "/assets/img/ncsuhealth-logo.png" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Full-stack health platform built at the NCSU Hackathon for nutrition and exercise tracking, integrating React, Django, and MongoDB.</li>
-                <li>Designed scalable data pipelines and schema architecture for health-metric storage and efficient querying.</li>
-              </ul>
-              <p class="proj-tech">React &middot; Django &middot; MongoDB</p>
-              <p class="proj-links"><a href="https://github.com/DavidMond9/NCSUHealth" target="_blank">GitHub &#8599;</a></p>
-            </div>
-          </div>
-        </div></div>
-      </div>
-
-      <div class="project-pill" id="proj-foodseer">
-        <button class="pill-header" type="button" aria-expanded="false">
-          Food Seer <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content"><div class="proj-details">
+      <div class="proj-panel" id="proj-panel-scd">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/scdtype2.png" | relative_url }}" alt="SCD Type 2" class="proj-img" onclick="openLightbox('{{ "/assets/img/scdtype2.png" | relative_url }}')">
+          <div class="proj-details">
             <ul>
-              <li>Full-stack AI meal recommendation platform with authenticated REST APIs, MySQL-backed user profiles, and role-based access flows.</li>
-              <li>Integrated an Ollama-powered local LLM generating personalized meal suggestions from user preference inputs and conversational context.</li>
+              <li>SCD Type 2 patterns with Delta Lake, SQL, and PySpark preserving full historical dimensional data across millions of records.</li>
+              <li>Auditable versioned records with effective date tracking for analytics, BI reporting, and compliance workflows.</li>
             </ul>
-            <p class="proj-tech">React &middot; Spring Boot &middot; MySQL &middot; JWT &middot; Ollama</p>
-          </div></div>
-        </div></div>
-      </div>
-
-    </div><!-- /.projects-grid -->
-
-    <div class="proj-section-label">Graduate Work</div>
-    <div class="projects-grid">
-
-      <div class="project-pill" id="proj-econet">
-        <button class="pill-header" type="button" aria-expanded="false">
-          EcoNET QA: Anomaly Classification <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/econet.jpg" | relative_url }}" alt="EcoNET" class="proj-img" onclick="openLightbox('{{ "/assets/img/econet.jpg" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Feature-engineering pipeline transforming <strong>6.59M</strong> EcoNET QA rows into model-ready tables by joining flagged observations with station history and metadata.</li>
-                <li>Engineered lag, rolling-window, deviation, cyclic-calendar, and QA-summary features; evaluated Logistic Regression, Decision Tree, Random Forest, and HistGradientBoosting with time-aware splits.</li>
-                <li>Best validation <strong>F1 of 0.869</strong> and <strong>PR-AUC of 0.913</strong> on the engineered feature set.</li>
-              </ul>
-              <p class="proj-tech">Python &middot; Pandas &middot; NumPy &middot; scikit-learn &middot; Matplotlib</p>
-              <p class="proj-links">
-                <a href="{{ "/classwork/ACM_Conference_Proceedings_Primary_Article_Template (6).pdf" | relative_url }}" target="_blank">Final Paper Report</a>
-                &middot;
-                <a href="{{ "/classwork/CSC522 Final Project Code.zip" | relative_url }}" target="_blank">Code (ZIP)</a>
-              </p>
-            </div>
+            <p class="proj-tech">PySpark &middot; Delta Lake &middot; SQL &middot; Databricks</p>
           </div>
-        </div></div>
+        </div>
       </div>
 
-      <div class="project-pill" id="proj-pokemon">
-        <button class="pill-header" type="button" aria-expanded="false">
-          Pok&eacute;mon Data Mining <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content"><div class="proj-details">
+      <div class="proj-panel" id="proj-panel-beesbridge">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/beesbridge.jpeg" | relative_url }}" alt="Beesbridge" class="proj-img" onclick="openLightbox('{{ "/assets/img/beesbridge.jpeg" | relative_url }}')">
+          <div class="proj-details">
             <ul>
-              <li>Analyzed a Kaggle dataset spanning 50+ attributes across Generations 1&ndash;8 to predict Pok&eacute;mon battle strength using data mining techniques.</li>
-              <li>Built neural network and decision tree models achieving <strong>86% test accuracy</strong> and <strong>91.74% overall accuracy</strong> respectively.</li>
+              <li>Rebuilt from WordPress/Elementor into a React static stack &mdash; <strong>GTmetrix Grade A</strong>, 99% performance, 98% structure.</li>
+              <li>Cut payload to <strong>100 KB</strong> and network requests to <strong>5</strong>; supports 150+ client case studies and enterprise service offerings.</li>
             </ul>
-            <p class="proj-tech">Python &middot; Pandas &middot; NumPy &middot; PyTorch &middot; scikit-learn &middot; Matplotlib</p>
-          </div></div>
-        </div></div>
-      </div>
-
-      <div class="project-pill" id="proj-os">
-        <button class="pill-header" type="button" aria-expanded="false">
-          CSC 501: Operating Systems <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/linux-logo.svg" | relative_url }}" alt="Linux" class="proj-img" onclick="openLightbox('{{ "/assets/img/linux-logo.svg" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li><strong>P1:</strong> XINU kernel bring-up and debug workflow with QEMU/GDB.</li>
-                <li><strong>P2:</strong> Starvation-aware schedulers implementing exponential and Linux-like scheduling policies.</li>
-                <li><strong>P3:</strong> Demand paging with virtual memory mapping and page-replacement instrumentation.</li>
-                <li><strong>P4:</strong> Unix file-system defragmenter in C over raw disk images and block metadata.</li>
-              </ul>
-              <p class="proj-tech">C &middot; XINU OS &middot; QEMU &middot; GDB</p>
-            </div>
+            <p class="proj-tech">React &middot; HTML/CSS &middot; JavaScript</p>
+            <p class="proj-links"><a href="https://beesbridge.us/" target="_blank">Live Site &#8599;</a></p>
           </div>
-        </div></div>
+        </div>
       </div>
 
-      <div class="project-pill" id="proj-aes">
-        <button class="pill-header" type="button" aria-expanded="false">
-          AES Encryption &amp; Decryption <i class="fas fa-chevron-down pill-chevron"></i>
-        </button>
-        <div class="pill-body"><div class="pill-inner">
-          <div class="proj-content">
-            <img src="{{ "/assets/img/aesencryption.png" | relative_url }}" alt="AES" class="proj-img" onclick="openLightbox('{{ "/assets/img/aesencryption.png" | relative_url }}')">
-            <div class="proj-details">
-              <ul>
-                <li>Implemented AES-based encryption and decryption from scratch in C with build automation through Make.</li>
-              </ul>
-              <p class="proj-tech">C &middot; Make</p>
-            </div>
+      <div class="proj-panel" id="proj-panel-ncsuhealth">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/ncsuhealth-logo.png" | relative_url }}" alt="NCSUHealth" class="proj-img" onclick="openLightbox('{{ "/assets/img/ncsuhealth-logo.png" | relative_url }}')">
+          <div class="proj-details">
+            <ul>
+              <li>Full-stack health platform built at the NCSU Hackathon for nutrition and exercise tracking, integrating React, Django, and MongoDB.</li>
+              <li>Designed scalable data pipelines and schema architecture for health-metric storage and efficient querying.</li>
+            </ul>
+            <p class="proj-tech">React &middot; Django &middot; MongoDB</p>
+            <p class="proj-links"><a href="https://github.com/DavidMond9/NCSUHealth" target="_blank">GitHub &#8599;</a></p>
           </div>
+        </div>
+      </div>
+
+      <div class="proj-panel" id="proj-panel-econet">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/econet.jpg" | relative_url }}" alt="EcoNET" class="proj-img" onclick="openLightbox('{{ "/assets/img/econet.jpg" | relative_url }}')">
+          <div class="proj-details">
+            <ul>
+              <li>Feature-engineering pipeline transforming <strong>6.59M</strong> EcoNET QA rows into model-ready tables by joining flagged observations with station history and metadata.</li>
+              <li>Engineered lag, rolling-window, deviation, cyclic-calendar, and QA-summary features; evaluated Logistic Regression, Decision Tree, Random Forest, and HistGradientBoosting with time-aware splits.</li>
+              <li>Best validation <strong>F1 of 0.869</strong> and <strong>PR-AUC of 0.913</strong> on the engineered feature set.</li>
+            </ul>
+            <p class="proj-tech">Python &middot; Pandas &middot; NumPy &middot; scikit-learn &middot; Matplotlib</p>
+            <p class="proj-links">
+              <a href="{{ "/classwork/ACM_Conference_Proceedings_Primary_Article_Template (6).pdf" | relative_url }}" target="_blank">Final Paper Report</a>
+              &middot;
+              <a href="{{ "/classwork/CSC522 Final Project Code.zip" | relative_url }}" target="_blank">Code (ZIP)</a>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel" id="proj-panel-pokemon">
+        <div class="proj-content"><div class="proj-details">
+          <ul>
+            <li>Analyzed a Kaggle dataset spanning 50+ attributes across Generations 1&ndash;8 to predict Pok&eacute;mon battle strength using data mining techniques.</li>
+            <li>Built neural network and decision tree models achieving <strong>86% test accuracy</strong> and <strong>91.74% overall accuracy</strong> respectively.</li>
+          </ul>
+          <p class="proj-tech">Python &middot; Pandas &middot; NumPy &middot; PyTorch &middot; scikit-learn &middot; Matplotlib</p>
         </div></div>
       </div>
 
-    </div><!-- /.projects-grid graduate -->
+      <div class="proj-panel" id="proj-panel-os">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/linux-logo.svg" | relative_url }}" alt="Linux" class="proj-img" onclick="openLightbox('{{ "/assets/img/linux-logo.svg" | relative_url }}')">
+          <div class="proj-details">
+            <ul>
+              <li><strong>P1:</strong> XINU kernel bring-up and debug workflow with QEMU/GDB.</li>
+              <li><strong>P2:</strong> Starvation-aware schedulers implementing exponential and Linux-like scheduling policies.</li>
+              <li><strong>P3:</strong> Demand paging with virtual memory mapping and page-replacement instrumentation.</li>
+              <li><strong>P4:</strong> Unix file-system defragmenter in C over raw disk images and block metadata.</li>
+            </ul>
+            <p class="proj-tech">C &middot; XINU OS &middot; QEMU &middot; GDB</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel" id="proj-panel-aes">
+        <div class="proj-content">
+          <img src="{{ "/assets/img/aesencryption.png" | relative_url }}" alt="AES" class="proj-img" onclick="openLightbox('{{ "/assets/img/aesencryption.png" | relative_url }}')">
+          <div class="proj-details">
+            <ul>
+              <li>Implemented AES-based encryption and decryption from scratch in C with build automation through Make.</li>
+            </ul>
+            <p class="proj-tech">C &middot; Make</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-panel" id="proj-panel-foodseer">
+        <div class="proj-content"><div class="proj-details">
+          <ul>
+            <li>Full-stack AI meal recommendation platform with authenticated REST APIs, MySQL-backed user profiles, and role-based access flows.</li>
+            <li>Integrated an Ollama-powered local LLM generating personalized meal suggestions from user preference inputs and conversational context.</li>
+          </ul>
+          <p class="proj-tech">React &middot; Spring Boot &middot; MySQL &middot; JWT &middot; Ollama</p>
+        </div></div>
+      </div>
+
+    </div><!-- /.proj-panels -->
   </div>
 
   <!-- ── Skills ─────────────────────────────────────────────────────── -->

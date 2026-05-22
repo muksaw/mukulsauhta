@@ -79,10 +79,9 @@ body {
   to   { opacity: 1; transform: translateY(0);    }
 }
 
-.site-header   { animation: fadeUp 0.55s ease both; }
-.about-section { animation: fadeUp 0.55s 0.10s ease both; }
-.tab-nav       { animation: fadeUp 0.55s 0.18s ease both; }
-.tab-panels    { animation: fadeUp 0.55s 0.24s ease both; }
+.site-header  { animation: fadeUp 0.55s ease both; }
+.nav-row      { animation: fadeUp 0.55s 0.10s ease both; }
+.about-section { animation: fadeUp 0.55s 0.18s ease both; }
 
 /* ── Header ───────────────────────────────────────────────────────── */
 .site-header {
@@ -159,27 +158,39 @@ body {
   border-color: var(--accent-border);
 }
 
-/* ── About section (always visible) ──────────────────────────────── */
-.about-section {
-  margin-bottom: 40px;
+/* ── Nav row (back button + tab nav) ──────────────────────────────── */
+.nav-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  margin-bottom: 36px;
 }
 
-.about-section p {
-  font-size: 0.925rem;
-  color: var(--text);
-  margin-bottom: 12px;
-  line-height: 1.75;
+.back-btn {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0 6px 11px 0;
+  font-size: 0.85rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: color 0.15s;
 }
 
-.about-section p:last-child { margin-bottom: 0; }
+.back-btn.visible { display: inline-flex; }
+.back-btn:hover { color: var(--accent); }
 
 /* ── Tab navigation ───────────────────────────────────────────────── */
 .tab-nav {
   display: flex;
   flex-wrap: wrap;
   border-bottom: 1px solid var(--border);
-  margin-bottom: 36px;
-  gap: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .tab-btn {
@@ -206,6 +217,20 @@ body {
   border-bottom-color: var(--accent);
   font-weight: 600;
 }
+
+/* ── About section (default view) ────────────────────────────────── */
+.about-section {
+  /* display managed by JS */
+}
+
+.about-section p {
+  font-size: 0.925rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+.about-section p:last-child { margin-bottom: 0; }
 
 /* ── Tab panels ───────────────────────────────────────────────────── */
 .tab-panel { display: none; }
@@ -238,7 +263,7 @@ strong { font-weight: 600; }
 .section-note {
   font-size: 0.8rem;
   color: var(--muted);
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   font-style: italic;
 }
 
@@ -351,114 +376,74 @@ strong { font-weight: 600; }
   text-decoration: none;
 }
 
-/* ── Project section label (Graduate Work divider) ────────────────── */
-.proj-section-label {
-  font-size: 0.7rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.09em;
-  color: var(--muted);
-  margin: 32px 0 14px;
-  padding-top: 28px;
-  border-top: 1px solid var(--border);
-}
-
-/* ── Projects grid ────────────────────────────────────────────────── */
-.projects-grid {
+/* ── Project sub-tab navigation ───────────────────────────────────── */
+.proj-tab-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 7px;
 }
 
-/* ── Project pill (expandable chip) ──────────────────────────────── */
-.project-pill.open {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.project-pill > .pill-header {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 7px;
-  padding: 6px 13px;
-  background: var(--tag-bg);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  cursor: pointer;
-  font-family: var(--font);
-  font-size: 0.82rem;
-  font-weight: 500;
-  color: var(--text);
-  white-space: nowrap;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-}
-
-.project-pill > .pill-header:hover {
-  background: var(--pill-hover);
-  color: var(--accent);
-  border-color: var(--accent-border);
-}
-
-.project-pill.open > .pill-header {
-  display: flex;
-  width: 100%;
-  border: none;
+.proj-tab-nav-last {
   border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  background: var(--surface);
+  margin-bottom: 22px;
+}
+
+.proj-group-label {
+  font-size: 0.63rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  opacity: 0.75;
+  margin: 6px 0 5px;
+}
+
+.proj-tab-btn {
+  padding: 6px 0;
+  margin-right: 18px;
+  margin-bottom: 8px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.proj-tab-btn:hover { color: var(--text); }
+
+.proj-tab-nav-last .proj-tab-btn {
+  margin-bottom: -1px;
+}
+
+.proj-tab-btn.active {
   color: var(--accent);
-  padding: 10px 16px;
-  font-size: 0.875rem;
+  border-bottom-color: var(--accent);
   font-weight: 600;
 }
 
-/* ── Pill body (CSS grid row animation) ───────────────────────────── */
-.pill-body {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows 0.38s cubic-bezier(0.4, 0, 0.2, 1),
-              opacity 0.28s ease;
-}
+/* ── Project panels ───────────────────────────────────────────────── */
+.proj-panel { display: none; }
 
-.project-pill.open > .pill-body {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
-
-.pill-inner {
-  min-height: 0;
-  overflow: hidden;
-  padding: 14px 16px 18px;
-  background: var(--bg);
-}
-
-/* ── Chevron ──────────────────────────────────────────────────────── */
-.pill-chevron {
-  font-size: 0.65rem;
-  color: var(--muted);
-  transition: transform 0.3s ease, color 0.15s;
-  flex-shrink: 0;
-}
-
-.project-pill.open > .pill-header .pill-chevron {
-  transform: rotate(180deg);
-  color: var(--accent);
+.proj-panel.active {
+  display: block;
+  animation: tabIn 0.2s ease both;
+  padding-top: 18px;
 }
 
 /* ── Project content ──────────────────────────────────────────────── */
 .proj-content {
   display: flex;
-  gap: 14px;
+  gap: 16px;
   align-items: flex-start;
 }
 
 .proj-img {
-  width: 64px;
-  height: 64px;
+  width: 68px;
+  height: 68px;
   object-fit: contain;
   flex-shrink: 0;
   cursor: pointer;
@@ -476,7 +461,7 @@ strong { font-weight: 600; }
 .proj-tech {
   font-size: 0.76rem;
   color: var(--muted);
-  margin-top: 8px;
+  margin-top: 10px;
   margin-bottom: 0;
 }
 
@@ -553,6 +538,7 @@ strong { font-weight: 600; }
   .site-name { font-size: 1.55rem; }
   .header-row { gap: 8px; }
   .tab-btn { margin-right: 18px; font-size: 0.82rem; }
+  .proj-tab-btn { margin-right: 14px; font-size: 0.78rem; }
   .proj-content { flex-direction: column; }
   .proj-img { width: 100%; height: 120px; }
 }
