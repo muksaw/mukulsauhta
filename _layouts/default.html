@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,23 +11,25 @@
 <body>
   <div class="site">
     <header class="site-header">
-      <h1 class="site-name"><a href="/">Mukul Sauhta</a></h1>
+      <div class="header-row">
+        <h1 class="site-name"><a href="/">Mukul Sauhta</a></h1>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
+          <span id="theme-label">Light</span>
+        </button>
+      </div>
       <p class="site-tagline">Software &amp; Data Engineer &middot; M.S. CS @ NC State</p>
       <div class="contact-links">
         <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> Email</a>
         <a href="https://www.linkedin.com/in/{{ site.linkedin_username }}" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
         <a href="https://github.com/{{ site.github_username }}" target="_blank"><i class="fab fa-github"></i> GitHub</a>
-        <span class="location"><i class="fas fa-map-marker-alt"></i> Raleigh, NC</span>
+        <span class="location"><i class="fas fa-map-marker-alt"></i> {{ site.location }}</span>
       </div>
     </header>
 
     <main class="site-content">
       {{ content }}
     </main>
-
-    <footer class="site-footer">
-      <p>Hosted on GitHub Pages</p>
-    </footer>
   </div>
 
   <div class="lightbox" id="lightbox">
@@ -36,59 +38,108 @@
   </div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      var sections = document.querySelectorAll('.accordion-section');
+    // ── Theme ──────────────────────────────────────────────────────────
+    var THEMES = [
+      { id: 'light', icon: 'fa-sun',                label: 'Light' },
+      { id: 'grey',  icon: 'fa-circle-half-stroke', label: 'Grey'  },
+      { id: 'dark',  icon: 'fa-moon',               label: 'Dark'  },
+    ];
+    var themeIdx = 0;
 
-      sections.forEach(function (section) {
-        var body = section.querySelector('.section-body');
-        body.style.maxHeight = '0';
+    function applyTheme(id) {
+      var t = THEMES.find(function(x){ return x.id === id; });
+      if (!t) return;
+      document.documentElement.setAttribute('data-theme', id);
+      var icon  = document.getElementById('theme-icon');
+      var label = document.getElementById('theme-label');
+      if (icon)  icon.className = 'fas ' + t.icon;
+      if (label) label.textContent = t.label;
+      themeIdx = THEMES.indexOf(t);
+    }
 
-        section.querySelector('.section-toggle').addEventListener('click', function () {
-          var isOpen = section.classList.contains('open');
+    (function() {
+      var saved = localStorage.getItem('portfolio-theme') || 'light';
+      applyTheme(saved);
+    })();
 
-          // Close all sections
-          sections.forEach(function (s) {
-            s.classList.remove('open');
-            s.querySelector('.section-body').style.maxHeight = '0';
-            s.querySelector('.section-toggle').setAttribute('aria-expanded', 'false');
-          });
+    function cycleTheme() {
+      themeIdx = (themeIdx + 1) % THEMES.length;
+      applyTheme(THEMES[themeIdx].id);
+      localStorage.setItem('portfolio-theme', THEMES[themeIdx].id);
+    }
 
-          // Open this one if it was closed
-          if (!isOpen) {
-            section.classList.add('open');
-            body.style.maxHeight = body.scrollHeight + 'px';
-            section.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
-          }
-        });
-      });
+    // ── Tab switching (about <-> section content) ──────────────────────
+    function initTabs() {
+      var btns     = Array.from(document.querySelectorAll('.tab-btn'));
+      var panels   = Array.from(document.querySelectorAll('.tab-panel'));
+      var aboutEl  = document.getElementById('about-section');
+      var panelsEl = document.getElementById('tab-panels');
+      var backBtn  = document.getElementById('back-btn');
 
-      // Open About by default
-      var about = document.getElementById('about');
-      if (about) {
-        about.classList.add('open');
-        var aboutBody = about.querySelector('.section-body');
-        aboutBody.style.maxHeight = aboutBody.scrollHeight + 'px';
-        about.querySelector('.section-toggle').setAttribute('aria-expanded', 'true');
+      function showAbout() {
+        if (aboutEl)  aboutEl.style.display  = '';
+        if (panelsEl) panelsEl.style.display = 'none';
+        if (backBtn)  backBtn.classList.remove('visible');
+        btns.forEach(function(b) { b.classList.remove('active'); });
       }
 
-      // Lightbox background click
-      document.getElementById('lightbox').addEventListener('click', function (e) {
+      function showTab(tabId) {
+        if (aboutEl)  aboutEl.style.display  = 'none';
+        if (panelsEl) panelsEl.style.display = '';
+        if (backBtn)  backBtn.classList.add('visible');
+        panels.forEach(function(p) { p.classList.remove('active'); });
+        btns.forEach(function(b) { b.classList.remove('active'); });
+        var btn   = btns.find(function(b) { return b.dataset.tab === tabId; });
+        var panel = document.getElementById('tab-' + tabId);
+        if (btn)   btn.classList.add('active');
+        if (panel) panel.classList.add('active');
+      }
+
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() { showTab(btn.dataset.tab); });
+      });
+
+      if (backBtn) backBtn.addEventListener('click', showAbout);
+    }
+
+    // ── Project sub-tabs ───────────────────────────────────────────────
+    function initProjTabs() {
+      var btns   = Array.from(document.querySelectorAll('.proj-tab-btn'));
+      var panels = Array.from(document.querySelectorAll('.proj-panel'));
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          panels.forEach(function(p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          var panel = document.getElementById('proj-panel-' + btn.dataset.proj);
+          if (panel) panel.classList.add('active');
+        });
+      });
+    }
+
+    // Script is at bottom of <body> — DOM is ready
+    (function() {
+      initTabs();
+      initProjTabs();
+      var btn = document.getElementById('theme-btn');
+      if (btn) btn.addEventListener('click', cycleTheme);
+      var lb = document.getElementById('lightbox');
+      if (lb) lb.addEventListener('click', function(e) {
         if (e.target !== document.getElementById('lightbox-img')) closeLightbox();
       });
-    });
+    })();
 
+    // ── Lightbox ───────────────────────────────────────────────────────
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
       document.body.style.overflow = 'hidden';
     }
-
     function closeLightbox() {
       document.getElementById('lightbox').style.display = 'none';
       document.body.style.overflow = '';
     }
-
-    document.addEventListener('keydown', function (e) {
+    document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeLightbox();
     });
   </script>
