@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mukul Sauhta — Preview</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
+</head>
+<body>
+  <div class="site">
+    <header class="site-header">
+      <div class="header-row">
+        <h1 class="site-name"><a href="#">Mukul Sauhta</a></h1>
+        <button class="theme-btn" id="theme-btn" aria-label="Toggle theme">
+          <i class="fas fa-sun" id="theme-icon"></i>
+          <span id="theme-label">Light</span>
+        </button>
+      </div>
+      <p class="site-tagline">Software &amp; Data Engineer &middot; M.S. CS @ NC State</p>
+      <div class="contact-links">
+        <a href="#"><i class="fas fa-envelope"></i> Email</a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+        <a href="#" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+        <span class="location"><i class="fas fa-map-marker-alt"></i> Raleigh, NC</span>
+      </div>
+    </header>
+
+    <main class="site-content">
+
+      <section class="about-section">
+        <p>I'm a software and data engineer finishing my M.S. in Computer Science at NC State. I like building things with real constraints — pipelines that need to process millions of records reliably, applications that need to load fast, systems that other engineers can trust and extend.</p>
+        <p>Most of my recent work has been in data infrastructure: I built an observability library at Perdis AI that brought dataset ingestion from <strong>10 minutes to 10 seconds</strong>, shipped SCD Type 2 pipelines over millions of records with Delta Lake, and led backend development on a SAS-sponsored senior design project that governed <strong>5,000+ enterprise data entries</strong>. I hold four Databricks certifications and spend a lot of time in PySpark and Python, though I'm equally comfortable on the full-stack side.</p>
+        <p>Outside of work I'm usually on a trail somewhere — hiking around the Triangle, exploring state parks, or finding longer routes when I have the time. I also swim, read across a wide range of topics, and have an ambitious gaming backlog I'm slowly making progress on.</p>
+      </section>
+
+      <nav class="tab-nav" aria-label="Sections">
+        <button class="tab-btn active" data-tab="education">Education</button>
+        <button class="tab-btn" data-tab="experience">Experience</button>
+        <button class="tab-btn" data-tab="certifications">Certifications</button>
+        <button class="tab-btn" data-tab="projects">Projects</button>
+        <button class="tab-btn" data-tab="skills">Skills</button>
+      </nav>
+
+      <div class="tab-panels">
+
+        <!-- Education -->
+        <div class="tab-panel active" id="tab-education">
+          <div class="education-item">
+            <div class="edu-header">
+              <img src="assets/img/ncsu-engr.png" alt="NCSU" class="edu-logo">
+              <div>
+                <div class="edu-title">North Carolina State University &mdash; College of Engineering</div>
+                <div class="edu-degree">M.S., Computer Science &middot; Expected 2027</div>
+              </div>
+            </div>
+            <p><strong>Completed:</strong> Operating Systems Principles, Software Engineering, Cloud Computing Technology, Artificial Intelligence, Automated Learning &amp; Data Analysis, Computer &amp; Network Security</p>
+            <p><strong>In Progress:</strong> Architecture of Parallel Computers, Computer Networks, Internet Protocols</p>
+          </div>
+          <div class="education-item">
+            <div class="edu-header">
+              <img src="assets/img/ncsu-engr.png" alt="NCSU" class="edu-logo">
+              <div>
+                <div class="edu-title">North Carolina State University &mdash; College of Engineering</div>
+                <div class="edu-degree">B.S., Computer Science &middot; May 2025 &middot; GPA 3.7</div>
+              </div>
+            </div>
+            <p><strong>Highlights:</strong> Dean's List &middot; NCSU Hackathon participant (NCSUHealth)</p>
+            <p><strong>Coursework:</strong> Data Structures &amp; Algorithms, Software Engineering, Operating Systems, Artificial Intelligence, Machine Learning &amp; Data Analysis, Computer Security, Software Testing, Capstone Design</p>
+          </div>
+        </div>
+
+        <!-- Experience -->
+        <div class="tab-panel" id="tab-experience">
+          <div class="job">
+            <div class="job-title">Data Engineer Intern &middot; Perdis AI LLC</div>
+            <div class="job-meta">June 2024 &ndash; August 2024 &middot; Remote</div>
+            <ul>
+              <li>Built an internal data observability library in Python and PySpark to aggregate, profile, compare, and reformat large datasets incrementally with profile and drift metrics.</li>
+              <li>Reduced ingestion and reformatting time from <strong>10 minutes to 10 seconds</strong> by optimizing profiling workflows and data transformations.</li>
+              <li>Implemented SCD Type 2 pipelines with Delta Lake, PySpark, and SQL to preserve historical dimensional data across millions of records.</li>
+            </ul>
+          </div>
+          <div class="job">
+            <div class="job-title">Full-Stack Developer &middot; Beesbridge LLC</div>
+            <div class="job-meta">December 2022 &ndash; August 2024 &middot; Remote</div>
+            <ul>
+              <li>Rebuilt the company website from WordPress/Elementor into a React static stack, achieving <strong>GTmetrix Grade A</strong> with 99% performance and 98% structure scores.</li>
+              <li>Reduced payload to <strong>100 KB</strong> and network requests to <strong>5</strong>, improving page load consistency across all devices.</li>
+              <li>Maintained and enhanced frontend/backend integrations supporting Beesbridge's Databricks delivery and AI/ML service offerings.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Certifications -->
+        <div class="tab-panel" id="tab-certifications">
+          <div class="cert-item">
+            <img src="assets/img/databrickslogo.jpeg" alt="Databricks" class="cert-logo">
+            <div>
+              <div class="cert-name">Databricks Certified Data Engineer Professional</div>
+              <a href="#" class="cert-badge">Issued Jul 2025 &middot; Expires Jul 2027</a>
+            </div>
+          </div>
+          <div class="cert-item">
+            <img src="assets/img/databrickslogo.jpeg" alt="Databricks" class="cert-logo">
+            <div>
+              <div class="cert-name">Databricks Certified Generative AI Engineer Associate</div>
+              <a href="#" class="cert-badge">Issued Oct 2024 &middot; Expires Oct 2026</a>
+            </div>
+          </div>
+          <div class="cert-item">
+            <img src="assets/img/databrickslogo.jpeg" alt="Databricks" class="cert-logo">
+            <div>
+              <div class="cert-name">Databricks Certified Machine Learning Associate</div>
+              <a href="#" class="cert-badge">Issued Jul 2024 &middot; Expires Jul 2026</a>
+            </div>
+          </div>
+          <div class="cert-item">
+            <img src="assets/img/databrickslogo.jpeg" alt="Databricks" class="cert-logo">
+            <div>
+              <div class="cert-name">Databricks Certified Data Engineer Associate</div>
+              <a href="#" class="cert-badge">Issued Jun 2024 &middot; Expires Jun 2026</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="tab-panel" id="tab-projects">
+          <p class="section-note">A selection of projects &mdash; see <a href="https://github.com/muksaw" target="_blank">GitHub</a> for more.</p>
+          <div class="projects-grid">
+
+            <div class="project-pill" id="proj-sas">
+              <button class="pill-header" type="button" aria-expanded="false">
+                SAS Curator's Compass <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content"><div class="proj-details">
+                  <ul>
+                    <li>SAS-sponsored senior design project (team of 5): governed catalog for enterprise data assets with 5+ blueprint templates.</li>
+                    <li>Metadata-driven workflow over <strong>5,000+ entries</strong> — <strong>90% auto-suggestion accuracy</strong>, <strong>80% reduction</strong> in manual curation time.</li>
+                    <li>Full-stack system with role-based access, schema-enforced metadata forms, and auditable review pipeline.</li>
+                  </ul>
+                  <p class="proj-tech">React &middot; Django &middot; PostgreSQL &middot; Docker</p>
+                </div></div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-obs">
+              <button class="pill-header" type="button" aria-expanded="false">
+                Data Observability Tool <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content">
+                  <img src="assets/img/dataobservability.png" alt="Data Observability" class="proj-img" onclick="openLightbox('assets/img/dataobservability.png')">
+                  <div class="proj-details">
+                    <ul>
+                      <li>Python/PySpark observability library tracking <strong>15+ statistical metrics</strong> per column including drift detection on large datasets.</li>
+                      <li>Reduced ingestion and reformatting time from <strong>10 minutes to 10 seconds</strong> (60&times; speedup) via optimized incremental transformations.</li>
+                      <li>Produced dashboard-ready outputs for downstream anomaly detection and reliability monitoring.</li>
+                    </ul>
+                    <p class="proj-tech">Python &middot; PySpark &middot; Delta Lake &middot; Databricks</p>
+                  </div>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-scd">
+              <button class="pill-header" type="button" aria-expanded="false">
+                SCD Type 2 Pipeline <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content">
+                  <img src="assets/img/scdtype2.png" alt="SCD Type 2" class="proj-img" onclick="openLightbox('assets/img/scdtype2.png')">
+                  <div class="proj-details">
+                    <ul>
+                      <li>SCD Type 2 patterns with Delta Lake, SQL, and PySpark preserving full historical dimensional data across millions of records.</li>
+                      <li>Auditable versioned records with effective date tracking for analytics, BI reporting, and compliance.</li>
+                    </ul>
+                    <p class="proj-tech">PySpark &middot; Delta Lake &middot; SQL &middot; Databricks</p>
+                  </div>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-beesbridge">
+              <button class="pill-header" type="button" aria-expanded="false">
+                Beesbridge LLC Website <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content">
+                  <img src="assets/img/beesbridge.jpeg" alt="Beesbridge" class="proj-img" onclick="openLightbox('assets/img/beesbridge.jpeg')">
+                  <div class="proj-details">
+                    <ul>
+                      <li>Rebuilt from WordPress/Elementor into React static stack — <strong>GTmetrix Grade A</strong>, 99% performance, 98% structure.</li>
+                      <li>Cut payload to <strong>100 KB</strong>, network requests to <strong>5</strong>; supports 150+ client case studies.</li>
+                    </ul>
+                    <p class="proj-tech">React &middot; HTML/CSS &middot; JavaScript</p>
+                    <p class="proj-links"><a href="https://beesbridge.us/" target="_blank">Live Site &#8599;</a></p>
+                  </div>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-foodseer">
+              <button class="pill-header" type="button" aria-expanded="false">
+                Food Seer <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content"><div class="proj-details">
+                  <ul>
+                    <li>Full-stack AI meal recommendation platform with authenticated REST APIs and MySQL-backed user profiles.</li>
+                    <li>Ollama-powered local LLM generating personalized meal suggestions from conversational input.</li>
+                  </ul>
+                  <p class="proj-tech">React &middot; Spring Boot &middot; MySQL &middot; JWT &middot; Ollama</p>
+                </div></div>
+              </div></div>
+            </div>
+
+          </div><!-- /.projects-grid -->
+
+          <div class="proj-section-label">Graduate Work</div>
+          <div class="projects-grid">
+
+            <div class="project-pill" id="proj-econet">
+              <button class="pill-header" type="button" aria-expanded="false">
+                EcoNET QA: Anomaly Classification <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content">
+                  <img src="assets/img/econet.jpg" alt="EcoNET" class="proj-img" onclick="openLightbox('assets/img/econet.jpg')">
+                  <div class="proj-details">
+                    <ul>
+                      <li>Feature-engineering pipeline transforming <strong>6.59M</strong> EcoNET QA rows into model-ready tables.</li>
+                      <li>Evaluated Logistic Regression, Decision Tree, Random Forest, and HistGradientBoosting with time-aware splits.</li>
+                      <li>Best validation <strong>F1 of 0.869</strong> and <strong>PR-AUC of 0.913</strong> on engineered feature set.</li>
+                    </ul>
+                    <p class="proj-tech">Python &middot; Pandas &middot; NumPy &middot; scikit-learn &middot; Matplotlib</p>
+                    <p class="proj-links">
+                      <a href="classwork/ACM_Conference_Proceedings_Primary_Article_Template (6).pdf" target="_blank">Final Paper Report</a>
+                    </p>
+                  </div>
+                </div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-pokemon">
+              <button class="pill-header" type="button" aria-expanded="false">
+                Pok&eacute;mon Data Mining <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content"><div class="proj-details">
+                  <ul>
+                    <li>Analyzed 50+ attributes across Generations 1&ndash;8 to predict battle strength; neural network and decision tree models reaching <strong>86%</strong> and <strong>91.74% accuracy</strong>.</li>
+                  </ul>
+                  <p class="proj-tech">Python &middot; Pandas &middot; PyTorch &middot; scikit-learn</p>
+                </div></div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-os">
+              <button class="pill-header" type="button" aria-expanded="false">
+                CSC 501: Operating Systems <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content"><div class="proj-details">
+                  <ul>
+                    <li>XINU kernel bring-up, starvation-aware schedulers, demand paging with page-replacement instrumentation, and a Unix file-system defragmenter in C.</li>
+                  </ul>
+                  <p class="proj-tech">C &middot; XINU OS &middot; QEMU &middot; GDB</p>
+                </div></div>
+              </div></div>
+            </div>
+
+            <div class="project-pill" id="proj-aes">
+              <button class="pill-header" type="button" aria-expanded="false">
+                AES Encryption &amp; Decryption <i class="fas fa-chevron-down pill-chevron"></i>
+              </button>
+              <div class="pill-body"><div class="pill-inner">
+                <div class="proj-content"><div class="proj-details">
+                  <ul>
+                    <li>AES-based encryption and decryption implemented from scratch in C with Make-based build automation.</li>
+                  </ul>
+                  <p class="proj-tech">C &middot; Make</p>
+                </div></div>
+              </div></div>
+            </div>
+
+          </div><!-- /.projects-grid graduate -->
+        </div>
+
+        <!-- Skills -->
+        <div class="tab-panel" id="tab-skills">
+          <div class="skill-category">
+            <div class="skill-category-title">Data Engineering &amp; Analytics</div>
+            <div class="skill-tags">
+              <span class="skill-tag">PySpark</span><span class="skill-tag">SQL</span><span class="skill-tag">Python</span><span class="skill-tag">Delta Lake</span><span class="skill-tag">Data Warehousing</span><span class="skill-tag">Data Modeling</span><span class="skill-tag">Feature Engineering</span><span class="skill-tag">scikit-learn</span><span class="skill-tag">Pandas</span><span class="skill-tag">NumPy</span><span class="skill-tag">PyTorch</span><span class="skill-tag">ETL/ELT Pipelines</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">MongoDB</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">Software Engineering</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Java</span><span class="skill-tag">C</span><span class="skill-tag">C++</span><span class="skill-tag">JavaScript</span><span class="skill-tag">TypeScript</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">Spring Boot</span><span class="skill-tag">Django</span><span class="skill-tag">REST APIs</span>
+            </div>
+          </div>
+          <div class="skill-category">
+            <div class="skill-category-title">Systems, Tooling &amp; Infra</div>
+            <div class="skill-tags">
+              <span class="skill-tag">Linux/Unix</span><span class="skill-tag">Git</span><span class="skill-tag">Docker</span><span class="skill-tag">Databricks</span><span class="skill-tag">AWS</span><span class="skill-tag">Shell Scripting</span><span class="skill-tag">GDB</span><span class="skill-tag">Valgrind</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /.tab-panels -->
+
+    </main>
+  </div>
+
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    var THEMES = [
+      { id: 'light', icon: 'fa-sun',                label: 'Light' },
+      { id: 'grey',  icon: 'fa-circle-half-stroke', label: 'Grey'  },
+      { id: 'dark',  icon: 'fa-moon',               label: 'Dark'  },
+    ];
+    var themeIdx = 0;
+
+    function applyTheme(id) {
+      var t = THEMES.find(function(x){ return x.id === id; });
+      if (!t) return;
+      document.documentElement.setAttribute('data-theme', id);
+      document.getElementById('theme-icon').className = 'fas ' + t.icon;
+      document.getElementById('theme-label').textContent = t.label;
+      themeIdx = THEMES.indexOf(t);
+    }
+
+    (function() {
+      var saved = localStorage.getItem('portfolio-theme') || 'light';
+      applyTheme(saved);
+    })();
+
+    function cycleTheme() {
+      themeIdx = (themeIdx + 1) % THEMES.length;
+      applyTheme(THEMES[themeIdx].id);
+      localStorage.setItem('portfolio-theme', THEMES[themeIdx].id);
+    }
+
+    function initTabs() {
+      var btns   = Array.from(document.querySelectorAll('.tab-btn'));
+      var panels = Array.from(document.querySelectorAll('.tab-panel'));
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          panels.forEach(function(p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          var panel = document.getElementById('tab-' + btn.dataset.tab);
+          if (panel) panel.classList.add('active');
+        });
+      });
+    }
+
+    function initPillGroup(pills) {
+      pills.forEach(function(pill) {
+        var header = pill.querySelector(':scope > .pill-header');
+        if (!header) return;
+        header.addEventListener('click', function(e) {
+          e.stopPropagation();
+          var isOpen = pill.classList.contains('open');
+          pills.forEach(function(p) {
+            p.classList.remove('open');
+            var h = p.querySelector(':scope > .pill-header');
+            if (h) h.setAttribute('aria-expanded', 'false');
+          });
+          if (!isOpen) {
+            pill.classList.add('open');
+            header.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+    }
+
+    (function() {
+      initTabs();
+      document.querySelectorAll('.projects-grid').forEach(function(grid) {
+        initPillGroup(Array.from(grid.querySelectorAll(':scope > .project-pill')));
+      });
+      document.getElementById('theme-btn').addEventListener('click', cycleTheme);
+      document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target !== document.getElementById('lightbox-img')) closeLightbox();
+      });
+    })();
+
+    function openLightbox(src) {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+      document.getElementById('lightbox').style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+</body>
+</html>

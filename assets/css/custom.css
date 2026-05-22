@@ -8,10 +8,10 @@
   --accent:         #2563eb;
   --accent-surface: #eff6ff;
   --accent-border:  #bfdbfe;
-  --pill-bg:        #f1f5f9;
-  --pill-hover:     #e4ecf6;
   --tag-bg:         #f3f4f6;
   --tag-text:       #374151;
+  --pill-bg:        #f1f5f9;
+  --pill-hover:     #e4ecf6;
   --shadow:         rgba(0,0,0,0.06);
 }
 
@@ -24,10 +24,10 @@
   --accent:         #2563eb;
   --accent-surface: #dbeafe;
   --accent-border:  #93c5fd;
-  --pill-bg:        #dde2ea;
-  --pill-hover:     #d0d7e2;
   --tag-bg:         #d8dde6;
   --tag-text:       #2d3748;
+  --pill-bg:        #dde2ea;
+  --pill-hover:     #d0d7e2;
   --shadow:         rgba(0,0,0,0.08);
 }
 
@@ -40,10 +40,10 @@
   --accent:         #7aa2f7;
   --accent-surface: #1a2743;
   --accent-border:  #2d4a8a;
-  --pill-bg:        #1c2130;
-  --pill-hover:     #252b3d;
   --tag-bg:         #1e2433;
   --tag-text:       #a9b2c8;
+  --pill-bg:        #1c2130;
+  --pill-hover:     #252b3d;
   --shadow:         rgba(0,0,0,0.3);
 }
 
@@ -70,12 +70,23 @@ body {
 .site {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 56px 24px 64px;
+  padding: 56px 24px 80px;
 }
+
+/* ── Load animations ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.site-header   { animation: fadeUp 0.55s ease both; }
+.about-section { animation: fadeUp 0.55s 0.10s ease both; }
+.tab-nav       { animation: fadeUp 0.55s 0.18s ease both; }
+.tab-panels    { animation: fadeUp 0.55s 0.24s ease both; }
 
 /* ── Header ───────────────────────────────────────────────────────── */
 .site-header {
-  margin-bottom: 40px;
+  margin-bottom: 36px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border);
 }
@@ -148,78 +159,218 @@ body {
   border-color: var(--accent-border);
 }
 
-/* ── Sections wrapper (pill flex grid) ────────────────────────────── */
-.sections-wrapper {
+/* ── About section (always visible) ──────────────────────────────── */
+.about-section {
+  margin-bottom: 40px;
+}
+
+.about-section p {
+  font-size: 0.925rem;
+  color: var(--text);
+  margin-bottom: 12px;
+  line-height: 1.75;
+}
+
+.about-section p:last-child { margin-bottom: 0; }
+
+/* ── Tab navigation ───────────────────────────────────────────────── */
+.tab-nav {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  align-items: flex-start;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 36px;
+  gap: 0;
 }
 
-/* ── Section pill ─────────────────────────────────────────────────── */
-/* Closed state: shrinks to button content */
-.section-pill { /* no explicit sizing — auto */ }
-
-/* Open state: full-width card */
-.section-pill.open {
-  width: 100%;
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px var(--shadow);
-  transition: box-shadow 0.2s ease;
-}
-
-/* The clickable pill button */
-.section-pill > .pill-header {
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 8px;
-  padding: 9px 16px;
-  background: var(--pill-bg);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  cursor: pointer;
+.tab-btn {
+  padding: 0 0 11px;
+  margin-right: 28px;
+  margin-bottom: -1px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
   font-family: var(--font);
   font-size: 0.875rem;
-  font-weight: 600;
-  color: var(--text);
+  font-weight: 500;
+  color: var(--muted);
+  cursor: pointer;
   white-space: nowrap;
-  transition: background 0.15s, color 0.15s, border-color 0.15s;
-  /* width: auto when closed, 100% when parent is open (set below) */
+  transition: color 0.15s, border-color 0.15s;
+  line-height: 1;
 }
 
-.section-pill > .pill-header:hover {
-  background: var(--pill-hover);
+.tab-btn:hover { color: var(--text); }
+
+.tab-btn.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Tab panels ───────────────────────────────────────────────────── */
+.tab-panel { display: none; }
+
+.tab-panel.active {
+  display: block;
+  animation: tabIn 0.22s ease both;
+}
+
+@keyframes tabIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to   { opacity: 1; transform: translateY(0);   }
+}
+
+/* ── Typography ───────────────────────────────────────────────────── */
+p { margin-bottom: 10px; }
+p:last-child { margin-bottom: 0; }
+
+ul { padding-left: 18px; margin-bottom: 10px; }
+ul:last-child { margin-bottom: 0; }
+
+li { margin-bottom: 4px; font-size: 0.875rem; }
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+strong { font-weight: 600; }
+
+/* ── Section note ─────────────────────────────────────────────────── */
+.section-note {
+  font-size: 0.8rem;
+  color: var(--muted);
+  margin-bottom: 16px;
+  font-style: italic;
+}
+
+/* ── Education ────────────────────────────────────────────────────── */
+.education-item {
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.education-item:last-child {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
+.edu-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.edu-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 4px;
+}
+
+.edu-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.edu-degree {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin-top: 1px;
+}
+
+.education-item p {
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+
+/* ── Experience ───────────────────────────────────────────────────── */
+.job {
+  padding-left: 14px;
+  border-left: 2px solid var(--border);
+  margin-bottom: 28px;
+}
+
+.job:last-child { margin-bottom: 0; }
+
+.job-title {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.job-meta {
+  color: var(--muted);
+  font-size: 0.8rem;
+  margin-bottom: 8px;
+}
+
+/* ── Certifications ───────────────────────────────────────────────── */
+.cert-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.cert-item:first-child { padding-top: 0; }
+.cert-item:last-child  { border-bottom: none; padding-bottom: 0; }
+
+.cert-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border-radius: 3px;
+}
+
+.cert-name {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.cert-badge {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 10px;
+  font-size: 0.76rem;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.cert-badge:hover {
   color: var(--accent);
   border-color: var(--accent-border);
+  text-decoration: none;
 }
 
-/* When section is open — pill-header becomes the card's title bar */
-.section-pill.open > .pill-header {
-  display: flex;
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid var(--border);
-  border-radius: 0;
-  background: var(--surface);
-  color: var(--accent);
-  padding: 12px 18px;
+/* ── Project section label (Graduate Work divider) ────────────────── */
+.proj-section-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--muted);
+  margin: 32px 0 14px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border);
 }
 
-/* ── Project pill (nested, within section body) ───────────────────── */
+/* ── Projects grid ────────────────────────────────────────────────── */
 .projects-grid {
   display: flex;
   flex-wrap: wrap;
   gap: 7px;
-  margin-top: 14px;
 }
 
-/* Closed: compact chip */
-.project-pill { /* auto size */ }
-
-/* Open: full-width card within the section */
+/* ── Project pill (expandable chip) ──────────────────────────────── */
 .project-pill.open {
   width: 100%;
   border: 1px solid var(--border);
@@ -264,20 +415,6 @@ body {
   font-weight: 600;
 }
 
-/* ── Chevron icon (shared) ────────────────────────────────────────── */
-.pill-chevron {
-  font-size: 0.65rem;
-  color: var(--muted);
-  transition: transform 0.3s ease, color 0.15s;
-  flex-shrink: 0;
-}
-
-.section-pill.open > .pill-header .pill-chevron,
-.project-pill.open > .pill-header .pill-chevron {
-  transform: rotate(180deg);
-  color: var(--accent);
-}
-
 /* ── Pill body (CSS grid row animation) ───────────────────────────── */
 .pill-body {
   display: grid;
@@ -287,156 +424,32 @@ body {
               opacity 0.28s ease;
 }
 
-.section-pill.open > .pill-body,
 .project-pill.open > .pill-body {
   grid-template-rows: 1fr;
   opacity: 1;
 }
 
-/* ── Pill inner content wrapper ───────────────────────────────────── */
 .pill-inner {
-  min-height: 0; /* required for grid-template-rows: 0fr */
+  min-height: 0;
   overflow: hidden;
-  padding: 18px 20px 22px;
+  padding: 14px 16px 18px;
   background: var(--bg);
 }
 
-.project-pill > .pill-body > .pill-inner {
-  padding: 14px 16px 18px;
-}
-
-/* ── Typography ───────────────────────────────────────────────────── */
-p { margin-bottom: 10px; }
-p:last-child { margin-bottom: 0; }
-
-ul { padding-left: 18px; margin-bottom: 10px; }
-ul:last-child { margin-bottom: 0; }
-
-li { margin-bottom: 4px; font-size: 0.875rem; }
-
-a { color: var(--accent); text-decoration: none; }
-a:hover { text-decoration: underline; }
-
-strong { font-weight: 600; }
-
-em { font-style: italic; color: var(--muted); font-size: 0.9em; }
-
-/* ── Section content note ─────────────────────────────────────────── */
-.section-note {
-  font-size: 0.8rem;
+/* ── Chevron ──────────────────────────────────────────────────────── */
+.pill-chevron {
+  font-size: 0.65rem;
   color: var(--muted);
-  margin-bottom: 10px;
-  font-style: italic;
-}
-
-/* ── About ────────────────────────────────────────────────────────── */
-.about-text p { font-size: 0.9rem; }
-
-/* ── Education ────────────────────────────────────────────────────── */
-.education-item {
-  padding: 14px 16px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  margin-bottom: 10px;
-}
-.education-item:last-child { margin-bottom: 0; }
-
-.edu-header {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 10px;
-}
-
-.edu-logo {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
+  transition: transform 0.3s ease, color 0.15s;
   flex-shrink: 0;
-  border-radius: 4px;
 }
 
-.edu-title {
-  font-weight: 600;
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-.edu-degree {
-  color: var(--muted);
-  font-size: 0.82rem;
-  margin-top: 1px;
-}
-
-.education-item p {
-  font-size: 0.85rem;
-  color: var(--text);
-  margin-bottom: 5px;
-}
-
-/* ── Experience ───────────────────────────────────────────────────── */
-.job {
-  padding-left: 14px;
-  border-left: 2px solid var(--border);
-  margin-bottom: 22px;
-}
-.job:last-child { margin-bottom: 0; }
-
-.job-title {
-  font-weight: 600;
-  font-size: 0.9rem;
-  margin-bottom: 2px;
-}
-
-.job-meta {
-  color: var(--muted);
-  font-size: 0.8rem;
-  margin-bottom: 8px;
-}
-
-/* ── Certifications ───────────────────────────────────────────────── */
-.cert-item {
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--border);
-}
-.cert-item:first-child { padding-top: 0; }
-.cert-item:last-child  { border-bottom: none; padding-bottom: 0; }
-
-.cert-logo {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  flex-shrink: 0;
-  border-radius: 3px;
-}
-
-.cert-name {
-  font-size: 0.875rem;
-  font-weight: 500;
-  margin-bottom: 4px;
-}
-
-.cert-badge {
-  display: inline-block;
-  padding: 2px 9px;
-  border-radius: 10px;
-  font-size: 0.76rem;
-  color: var(--muted);
-  border: 1px solid var(--border);
-  text-decoration: none;
-  transition: color 0.15s, border-color 0.15s;
-}
-.cert-badge:hover {
+.project-pill.open > .pill-header .pill-chevron {
+  transform: rotate(180deg);
   color: var(--accent);
-  border-color: var(--accent-border);
-  text-decoration: none;
 }
 
-/* ── Project content (inside project pills) ───────────────────────── */
+/* ── Project content ──────────────────────────────────────────────── */
 .proj-content {
   display: flex;
   gap: 14px;
@@ -455,6 +468,7 @@ em { font-style: italic; color: var(--muted); font-size: 0.9em; }
   border: 1px solid var(--border);
   transition: opacity 0.2s;
 }
+
 .proj-img:hover { opacity: 0.7; }
 
 .proj-details { flex: 1; min-width: 0; }
@@ -474,7 +488,7 @@ em { font-style: italic; color: var(--muted); font-size: 0.9em; }
 .proj-links a { margin-right: 12px; }
 
 /* ── Skills ───────────────────────────────────────────────────────── */
-.skill-category { margin-bottom: 18px; }
+.skill-category { margin-bottom: 22px; }
 .skill-category:last-child { margin-bottom: 0; }
 
 .skill-category-title {
@@ -483,7 +497,7 @@ em { font-style: italic; color: var(--muted); font-size: 0.9em; }
   text-transform: uppercase;
   letter-spacing: 0.09em;
   color: var(--muted);
-  margin-bottom: 9px;
+  margin-bottom: 10px;
 }
 
 .skill-tags {
@@ -530,13 +544,15 @@ em { font-style: italic; color: var(--muted); font-size: 0.9em; }
   line-height: 1;
   user-select: none;
 }
+
 .lightbox-close:hover { opacity: 1; }
 
 /* ── Mobile ───────────────────────────────────────────────────────── */
 @media (max-width: 560px) {
-  .site { padding: 36px 16px 48px; }
+  .site { padding: 36px 16px 56px; }
   .site-name { font-size: 1.55rem; }
   .header-row { gap: 8px; }
+  .tab-btn { margin-right: 18px; font-size: 0.82rem; }
   .proj-content { flex-direction: column; }
   .proj-img { width: 100%; height: 120px; }
 }

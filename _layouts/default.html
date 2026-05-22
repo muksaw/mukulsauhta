@@ -38,6 +38,7 @@
   </div>
 
   <script>
+    // ── Theme ──────────────────────────────────────────────────────────
     var THEMES = [
       { id: 'light', icon: 'fa-sun',                label: 'Light' },
       { id: 'grey',  icon: 'fa-circle-half-stroke', label: 'Grey'  },
@@ -56,7 +57,7 @@
       themeIdx = THEMES.indexOf(t);
     }
 
-    // Apply before paint to avoid flash
+    // Apply saved theme before paint to prevent flash
     (function() {
       var saved = localStorage.getItem('portfolio-theme') || 'light';
       applyTheme(saved);
@@ -68,6 +69,22 @@
       localStorage.setItem('portfolio-theme', THEMES[themeIdx].id);
     }
 
+    // ── Tab switching ──────────────────────────────────────────────────
+    function initTabs() {
+      var btns   = Array.from(document.querySelectorAll('.tab-btn'));
+      var panels = Array.from(document.querySelectorAll('.tab-panel'));
+      btns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          btns.forEach(function(b) { b.classList.remove('active'); });
+          panels.forEach(function(p) { p.classList.remove('active'); });
+          btn.classList.add('active');
+          var panel = document.getElementById('tab-' + btn.dataset.tab);
+          if (panel) panel.classList.add('active');
+        });
+      });
+    }
+
+    // ── Project pill accordion ─────────────────────────────────────────
     function initPillGroup(pills) {
       pills.forEach(function(pill) {
         var header = pill.querySelector(':scope > .pill-header');
@@ -88,9 +105,9 @@
       });
     }
 
-    // Script is at bottom of <body> — DOM is ready, no need for DOMContentLoaded
+    // Script is at bottom of <body> — DOM is ready
     (function() {
-      initPillGroup(Array.from(document.querySelectorAll('.sections-wrapper > .section-pill')));
+      initTabs();
       document.querySelectorAll('.projects-grid').forEach(function(grid) {
         initPillGroup(Array.from(grid.querySelectorAll(':scope > .project-pill')));
       });
@@ -102,6 +119,7 @@
       });
     })();
 
+    // ── Lightbox ───────────────────────────────────────────────────────
     function openLightbox(src) {
       document.getElementById('lightbox-img').src = src;
       document.getElementById('lightbox').style.display = 'flex';
